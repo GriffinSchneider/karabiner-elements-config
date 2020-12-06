@@ -128,6 +128,20 @@ const manipulators = [
   }),
 
   manipulator({
+    description: 'Alt-J -> Next tab',
+    conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
+    from: { key_code: 'j', modifiers: {mandatory: ['option'] } },
+    to: { key_code: 'tab', modifiers: ['control'], repeat: true },
+  }),
+  manipulator({
+    description: 'Alt-K -> Previous tab',
+    conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
+    from: { key_code: 'k', modifiers: {mandatory: ['option'] } },
+    to: { key_code: 'tab', modifiers: ['control', 'shift'], repeat: true },
+  }),
+
+
+  manipulator({
     description: 'J + K -> escape',
     from: {
       simultaneous: [{ key_code: 'j' }, { key_code: 'k' }],
@@ -190,6 +204,11 @@ const manipulators = [
       to: [{ key_code: 'k', modifiers: ['command'] }],
     }
   }}),
+  ...superShortcut({ k1: 'l', k2: 'semicolon', out: 'l', special: {
+    VSCode: {
+      to: [{ key_code: 'k', modifiers: ['command'] }, { key_code: 'i', modifiers: ['command'] }],
+    },
+  }}),
   ...superShortcut({ k1: 'j', k2: 'g', out: 'g' }),
   ...superShortcut({ k1: 'j', k2: 'semicolon', out: 'semicolon' }),
   ...superShortcut({ k1: 'j', k2: '1', out: '1' , special: {
@@ -230,6 +249,8 @@ const manipulators = [
     to: [{ key_code: 'f1' }],
     conditions: [{ bundle_identifiers: ['firefox'], type: 'frontmost_application_if' }],
   }),
+
+  ...superShortcut({ k1: 'l', k2: 'semicolon', out: 'l'}),
 
   // manipulator({
   //   description: 'Moom bottom left',

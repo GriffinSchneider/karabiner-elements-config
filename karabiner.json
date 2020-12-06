@@ -244,6 +244,81 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "Alt-J -> Next tab",
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "Emacs"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
+                      "krunker"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": [
+                      "option"
+                    ]
+                  }
+                },
+                "to": {
+                  "key_code": "tab",
+                  "modifiers": [
+                    "control"
+                  ],
+                  "repeat": true
+                }
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Alt-K -> Previous tab",
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "Emacs"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
+                      "krunker"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": [
+                      "option"
+                    ]
+                  }
+                },
+                "to": {
+                  "key_code": "tab",
+                  "modifiers": [
+                    "control",
+                    "shift"
+                  ],
+                  "repeat": true
+                }
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "J + K -> escape",
                 "from": {
                   "simultaneous": [
@@ -973,6 +1048,95 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "l + semicolon -> Super Shortcut",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "l"
+                    },
+                    {
+                      "key_code": "semicolon"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": [
+                      "command",
+                      "control",
+                      "option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "VSCode"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
+                      "krunker"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "l + semicolon -> Super Shortcut (VSCode)",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "l"
+                    },
+                    {
+                      "key_code": "semicolon"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "VSCode"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "k",
+                    "modifiers": [
+                      "command"
+                    ]
+                  },
+                  {
+                    "key_code": "i",
+                    "modifiers": [
+                      "command"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "j + g -> Super Shortcut",
                 "from": {
                   "simultaneous": [
@@ -1479,6 +1643,46 @@
                       "firefox"
                     ],
                     "type": "frontmost_application_if"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "l + semicolon -> Super Shortcut",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "l"
+                    },
+                    {
+                      "key_code": "semicolon"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": [
+                      "command",
+                      "control",
+                      "option",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "krunker"
+                    ],
+                    "type": "frontmost_application_unless"
                   }
                 ]
               }
