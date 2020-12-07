@@ -330,6 +330,7 @@ const manipulators = [
   ...pickApp({ k: 'o', app: 'Postico' }),
   ...pickApp({ k: 'p', app: 'Plex' }),
   ...pickApp({ k: 'r', app: 'Finder' }),
+  ...pickApp({ k: 's', app: 'Simulator' }),
 
   krunkerMap('a', 'left_shift'),
   krunkerMap('d', 's'),
