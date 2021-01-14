@@ -1766,6 +1766,40 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "Semicolon + c -> Google Chrome",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "c"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "krunker"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "to": [
+                  {
+                    "shell_command": "open -a \"Google Chrome.app\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "Semicolon + e -> /System/Volumes/Data/usr/local/Cellar/emacs-plus@27/HEAD-29708cb/Emacs",
                 "from": {
                   "simultaneous": [

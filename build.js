@@ -334,6 +334,7 @@ const manipulators = [
   }),
 
   ...pickApp({ k: 'f', app: 'FireFox Developer Edition' }),
+  ...pickApp({ k: 'c', app: 'Google Chrome' }),
   ...pickApp({ k: 'e', app: '/System/Volumes/Data/usr/local/Cellar/emacs-plus@27/HEAD-29708cb/Emacs' }),
   // // ...pickApp({ k: 'e', app: 'Emacs' }),
   ...pickApp({ k: 'i', app: 'ITerm' }),
