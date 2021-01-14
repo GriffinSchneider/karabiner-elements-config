@@ -320,6 +320,19 @@ const manipulators = [
   //   to: [{ key_code: 'k', modifiers: ['command', 'control'] }],
   // }),
 
+  manipulator({ global: true }, {
+    description: 'Semicolon + m -> Mute Google Meet in Chrome',
+    from: {
+      simultaneous: [{ key_code: 'semicolon' }, { key_code: 'm' }],
+      simultaneous_options: { key_down_order: 'insensitive' },
+    },
+    to: [
+      { shell_command: `open -a "Google Chrome.app"`, hold_down_milliseconds: 200 },
+      { key_code: 'd', modifiers: ['command'] },
+      { key_code: 'tab', modifiers: ['command'] },
+    ],
+  }),
+
   ...pickApp({ k: 'f', app: 'FireFox Developer Edition' }),
   ...pickApp({ k: 'e', app: '/System/Volumes/Data/usr/local/Cellar/emacs-plus@27/HEAD-29708cb/Emacs' }),
   // // ...pickApp({ k: 'e', app: 'Emacs' }),
