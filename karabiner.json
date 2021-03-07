@@ -118,7 +118,8 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "Emacs"
+                      "Emacs",
+                      "VSCode"
                     ],
                     "type": "frontmost_application_unless"
                   },
@@ -148,11 +149,12 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Cmd-L -> up",
+                "description": "Cmd-L -> right",
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "Emacs"
+                      "Emacs",
+                      "VSCode"
                     ],
                     "type": "frontmost_application_unless"
                   },
