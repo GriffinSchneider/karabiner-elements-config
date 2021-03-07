@@ -202,7 +202,10 @@ const manipulators = [
     },
     iterm: {
       to: [{ key_code: 'k', modifiers: ['command'] }],
-    }
+    },
+    reaper: {
+      to: [{ key_code: 'k', modifiers: ['command'] }],
+    },
   }}),
   ...superShortcut({ keys: ['l', 'semicolon'], out: 'l', special: {
     VSCode: {
@@ -349,6 +352,7 @@ const manipulators = [
   ...pickApp({ k: 'p', app: 'Plex' }),
   ...pickApp({ k: 'r', app: 'Finder' }),
   ...pickApp({ k: 's', app: 'Simulator' }),
+  ...pickApp({ k: 'a', app: 'REAPER64' }),
 
   krunkerMap('a', 'left_shift'),
   krunkerMap('d', 's'),
