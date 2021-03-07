@@ -334,7 +334,7 @@ const manipulators = [
       simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: [
-      { shell_command: `open -a "Google Chrome.app"`, hold_down_milliseconds: 200 },
+      { shell_command: `open -a "Google Chrome.app"`, hold_down_milliseconds: 500 },
       { key_code: 'd', modifiers: ['command'] },
       { key_code: 'tab', modifiers: ['command'] },
     ],

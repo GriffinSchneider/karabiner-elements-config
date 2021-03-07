@@ -1792,7 +1792,7 @@
                 "to": [
                   {
                     "shell_command": "open -a \"Google Chrome.app\"",
-                    "hold_down_milliseconds": 200
+                    "hold_down_milliseconds": 500
                   },
                   {
                     "key_code": "d",
