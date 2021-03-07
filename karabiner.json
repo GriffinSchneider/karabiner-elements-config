@@ -1048,6 +1048,43 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "j + l -> Super Shortcut (reaper)",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "l"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "reaper"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "k",
+                    "modifiers": [
+                      "command"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "l + semicolon -> Super Shortcut",
                 "from": {
                   "simultaneous": [
@@ -1205,9 +1242,52 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
+                      "VSCode"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
                       "krunker"
                     ],
                     "type": "frontmost_application_unless"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "j + semicolon -> Super Shortcut (VSCode)",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "semicolon"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "VSCode"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "f12",
+                    "modifiers": [
+                      "left_shift"
+                    ]
                   }
                 ]
               }

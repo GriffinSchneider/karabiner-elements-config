@@ -26,11 +26,11 @@ const manipulator = (opts, obj) => {
 };
 
 
-const superShortcut = ({ k1, k2, out, special }) => [
+const superShortcut = ({ keys, out, special }) => [
   manipulator({
-    description: `${k1} + ${k2} -> Super Shortcut`,
+    description: `${keys.join(' + ')} -> Super Shortcut`,
     from: {
-      simultaneous: [{ key_code: k1 }, { key_code: k2 }],
+      simultaneous: keys.map(k => ({ key_code: k })),
       simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: [{ key_code: out, modifiers: ['command', 'control', 'option', 'left_shift'] }],
@@ -41,9 +41,9 @@ const superShortcut = ({ k1, k2, out, special }) => [
     ].filter(x => x),
   }),
   ...(!special ? [] : Object.keys(special).map(sp => manipulator({
-    description: `${k1} + ${k2} -> Super Shortcut (${sp})`,
+    description: `${keys.join(' + ')} -> Super Shortcut (${sp})`,
     from: {
-      simultaneous: [{ key_code: k1 }, { key_code: k2 }],
+      simultaneous: keys.map(k => ({ key_code: k })),
       simultaneous_options: { key_down_order: 'insensitive' },
     },
     conditions: [{
@@ -157,7 +157,7 @@ const manipulators = [
     },
     to: [{ key_code: 's', modifiers: ['command'] }],
   }),
-  ...superShortcut({ k1: 'j', k2: 'v', out: 'v' , special: {
+  ...superShortcut({ keys: ['j', 'v'], out: 'v' , special: {
     firefox: {
       to: [
         { key_code: 'l', modifiers: ['command'] },
@@ -165,12 +165,12 @@ const manipulators = [
       ],
     },
   }}),
-  ...superShortcut({ k1: 'j', k2: 'x', out: 'x', special: {
+  ...superShortcut({ keys: ['j', 'x'], out: 'x', special: {
     VSCode: {
       to: [{ key_code: 'p', modifiers: ['command', 'left_shift'] }],
     },
   }}),
-  ...superShortcut({ k1: 'j', k2: 'd', out: 'd', special: {
+  ...superShortcut({ keys: ['j', 'd'], out: 'd', special: {
     VSCode: {
       to: [{ key_code: 'p', modifiers: ['command'] }],
     },
@@ -182,17 +182,17 @@ const manipulators = [
       to: [{ key_code: 'k', modifiers: ['command'] }],
     },
   }}),
-  ...superShortcut({ k1: 'j', k2: 'f', out: 'f', special: {
+  ...superShortcut({ keys: ['j', 'f'], out: 'f', special: {
     firefox: {
       to: [{ key_code: 'l', modifiers: ['command'] }],
     },
   }}),
-  ...superShortcut({ k1: 'j', k2: 'a', out: 'a', special: {
+  ...superShortcut({ keys: ['j', 'a'], out: 'a', special: {
     VSCode: {
       to: [{ key_code: 'f', modifiers: ['command', 'shift'] }],
     }
   }}),
-  ...superShortcut({ k1: 'j', k2: 'l', out: 'l', special: {
+  ...superShortcut({ keys: ['j', 'l'], out: 'l', special: {
     VSCode: {
       to: [{ key_code: 'f12' }],
     },
@@ -204,23 +204,27 @@ const manipulators = [
       to: [{ key_code: 'k', modifiers: ['command'] }],
     }
   }}),
-  ...superShortcut({ k1: 'l', k2: 'semicolon', out: 'l', special: {
+  ...superShortcut({ keys: ['l', 'semicolon'], out: 'l', special: {
     VSCode: {
       to: [{ key_code: 'k', modifiers: ['command'] }, { key_code: 'i', modifiers: ['command'] }],
     },
   }}),
-  ...superShortcut({ k1: 'j', k2: 'g', out: 'g' }),
-  ...superShortcut({ k1: 'j', k2: 'semicolon', out: 'semicolon' }),
-  ...superShortcut({ k1: 'j', k2: '1', out: '1' , special: {
+  ...superShortcut({ keys: ['j', 'g'], out: 'g' }),
+  ...superShortcut({ keys: ['j', 'semicolon'], out: 'semicolon', special: {
+    VSCode: {
+      to: [{ key_code: 'f12', 'modifiers': ['left_shift'] }],
+    },
+  }}),
+  ...superShortcut({ keys: ['j', '1'], out: '1' , special: {
     VSCode: {
       to: [{ key_code: 't', modifiers: ['command', 'option'] }],
     }
   }}),
-  ...superShortcut({ k1: 'j', k2: '2', out: '2' }),
-  ...superShortcut({ k1: 'j', k2: '3', out: '3' }),
-  ...superShortcut({ k1: 'j', k2: '4', out: '4' }),
+  ...superShortcut({ keys: ['j', '2'], out: '2' }),
+  ...superShortcut({ keys: ['j', '3'], out: '3' }),
+  ...superShortcut({ keys: ['j', '4'], out: '4' }),
 
-  ...superShortcut({ k1: 'k', k2: 'o', out: '0', special: {
+  ...superShortcut({ keys: ['k', 'o'], out: '0', special: {
     firefox: {
       to: [{ key_code: 'w', modifiers: ['command'] }],
     },
@@ -250,7 +254,7 @@ const manipulators = [
     conditions: [{ bundle_identifiers: ['firefox'], type: 'frontmost_application_if' }],
   }),
 
-  ...superShortcut({ k1: 'l', k2: 'semicolon', out: 'l'}),
+  ...superShortcut({ keys: ['l', 'semicolon'], out: 'l'}),
 
   // manipulator({
   //   description: 'Moom bottom left',
