@@ -169,6 +169,9 @@ const manipulators = [
     VSCode: {
       to: [{ key_code: 'p', modifiers: ['command', 'left_shift'] }],
     },
+    reaper: {
+      to: [{ key_code: 'slash', modifiers: ['left_shift'] }],
+    },
   }}),
   ...superShortcut({ keys: ['j', 'd'], out: 'd', special: {
     VSCode: {

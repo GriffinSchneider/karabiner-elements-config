@@ -509,7 +509,8 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "VSCode"
+                      "VSCode",
+                      "reaper"
                     ],
                     "type": "frontmost_application_unless"
                   },
@@ -554,6 +555,43 @@
                     "key_code": "p",
                     "modifiers": [
                       "command",
+                      "left_shift"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "j + x -> Super Shortcut (reaper)",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "x"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "reaper"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "slash",
+                    "modifiers": [
                       "left_shift"
                     ]
                   }
