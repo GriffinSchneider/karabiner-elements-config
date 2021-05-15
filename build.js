@@ -343,6 +343,35 @@ const manipulators = [
     ],
   }),
 
+  manipulator({
+    description: 'VSCode go to route handler',
+    from: {
+      simultaneous: [{ key_code: 'h' }, { key_code: 'semicolon' }],
+      simultaneous_options: { key_down_order: 'insensitive' },
+    },
+    to: [
+      { key_code: 'v', modifiers: [] },
+      { key_code: 'i', modifiers: [] },
+      { key_code: 'quote', modifiers: [] },
+      { key_code: 'f', modifiers: ['command', 'option', 'control'], hold_down_milliseconds: 1 },
+      { key_code: 'o', modifiers: ['control'], hold_down_milliseconds: 1 },
+      { key_code: 'escape', hold_down_milliseconds: 1 },
+      { key_code: 'i', modifiers: ['control'], hold_down_milliseconds: 100 },
+      { key_code: 'left_arrow', modifiers: [] },
+      { key_code: 'e', modifiers: [] },
+      { key_code: '9', modifiers: ['shift'] },
+      { key_code: 'quote', modifiers:  [] },
+      { key_code: 'return', modifiers: [], hold_down_milliseconds: 500 },
+      { key_code: 'f4', modifiers: [], },
+      { key_code: 'f12', modifiers: [], },
+      { key_code: 'f', modifiers: ['command', 'option', 'control', 'shift'] },
+      { key_code: 'o', modifiers: ['control'] },
+      { key_code: 'f', modifiers: ['command', 'option', 'control', 'shift'] },
+    ],
+    conditions: [{ bundle_identifiers: ['VSCode'], type: 'frontmost_application_if' }],
+  }),
+
+
   ...pickApp({ k: 'f', app: 'FireFox Developer Edition' }),
   ...pickApp({ k: 'c', app: 'Google Chrome' }),
   ...pickApp({ k: 'e', app: '/System/Volumes/Data/usr/local/Cellar/emacs-plus@27/HEAD-29708cb/Emacs' }),
