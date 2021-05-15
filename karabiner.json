@@ -2358,6 +2358,40 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "Semicolon + q -> Axe-Edit",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "q"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "krunker"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "to": [
+                  {
+                    "shell_command": "open -a \"Axe-Edit.app\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "Krunker: a -> left_shift",
                 "conditions": [
                   {

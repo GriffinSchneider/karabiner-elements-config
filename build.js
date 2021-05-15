@@ -385,6 +385,7 @@ const manipulators = [
   ...pickApp({ k: 'r', app: 'Finder' }),
   ...pickApp({ k: 's', app: 'Simulator' }),
   ...pickApp({ k: 'a', app: 'REAPER64' }),
+  ...pickApp({ k: 'q', app: 'Axe-Edit' }),
 
   krunkerMap('a', 'left_shift'),
   krunkerMap('d', 's'),
