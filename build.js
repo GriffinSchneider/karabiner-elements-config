@@ -1,5 +1,6 @@
 // https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/
-// if [[ `lsappinfo info -only name \`lsappinfo front\`` =~ "iTerm2" || `lsappinfo info -only name \`lsappinfo front\`` =~ "Plex" ]]; then cliclick kd:cmd kp:tab ku:cmd; fi;
+// Get bundle identifiers with `lsappinfo`
+
 
 const fs = require('fs');
 const path = require('path');
