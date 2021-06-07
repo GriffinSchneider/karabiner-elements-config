@@ -1881,86 +1881,13 @@
                     "modifiers": []
                   },
                   {
-                    "key_code": "f",
+                    "key_code": "c",
                     "modifiers": [
-                      "command",
-                      "option",
-                      "control"
-                    ],
-                    "hold_down_milliseconds": 1
-                  },
-                  {
-                    "key_code": "o",
-                    "modifiers": [
-                      "control"
-                    ],
-                    "hold_down_milliseconds": 1
-                  },
-                  {
-                    "key_code": "escape",
-                    "hold_down_milliseconds": 1
-                  },
-                  {
-                    "key_code": "i",
-                    "modifiers": [
-                      "control"
-                    ],
-                    "hold_down_milliseconds": 100
-                  },
-                  {
-                    "key_code": "left_arrow",
-                    "modifiers": []
-                  },
-                  {
-                    "key_code": "e",
-                    "modifiers": []
-                  },
-                  {
-                    "key_code": "9",
-                    "modifiers": [
-                      "shift"
+                      "command"
                     ]
                   },
                   {
-                    "key_code": "quote",
-                    "modifiers": []
-                  },
-                  {
-                    "key_code": "return",
-                    "modifiers": [],
-                    "hold_down_milliseconds": 500
-                  },
-                  {
-                    "key_code": "f4",
-                    "modifiers": []
-                  },
-                  {
-                    "key_code": "f12",
-                    "modifiers": []
-                  },
-                  {
-                    "key_code": "f",
-                    "modifiers": [
-                      "command",
-                      "option",
-                      "control",
-                      "shift"
-                    ]
-                  },
-                  {
-                    "key_code": "o",
-                    "modifiers": [
-                      "control"
-                    ]
-                  },
-                  {
-                    "key_code": "f",
-                    "modifiers": [
-                      "command",
-                      "option",
-                      "control",
-                      "shift"
-                    ]
+                    "shell_command": "/usr/local/bin/code --goto $(/usr/local/bin/ag -Q \"registerRoute('$(pbpaste)\" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)"
                   }
                 ],
                 "conditions": [
