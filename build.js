@@ -398,6 +398,14 @@ const manipulators = [
     ],
   }),
 
+  manipulator({ global: true }, {
+    description: 'Space + h + ; -> Open correlationId from clipboard in Honeycomb',
+    from: {
+      simultaneous: [{ key_code: 'semicolon' }, { key_code: 'h' }, { key_code: 'f'}],
+      simultaneous_options: { key_down_order: 'insensitive' },
+    },
+    to: [{ shell_command: 'open http://ui.honeycomb.io/mable-test/datasets/prod-mable/trace?trace_id=$(pbpaste)'}],
+  }),
 
   ...pickApp({ k: 'f', app: 'FireFox Developer Edition' }),
   ...pickApp({ k: 'c', app: 'Google Chrome' }),
