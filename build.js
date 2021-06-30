@@ -182,7 +182,7 @@ const manipulators = [
       to: [{ key_code: 'p', modifiers: ['command', 'left_shift'] }],
     },
     reaper: {
-      to: [{ key_code: 'slash', modifiers: ['left_shift'] }],
+      to: [{ key_code: 'slash', modifiers: ['left_shift', 'option'] }],
     },
   }}),
   ...superShortcut({ keys: ['j', 'd'], out: 'd', special: {
