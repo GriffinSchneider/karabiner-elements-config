@@ -356,7 +356,7 @@ const manipulators = [
   }),
 
   manipulator({
-    description: 'VSCode go to route handler',
+    description: 'h + ; -> VSCode go to route handler',
     from: {
       simultaneous: [{ key_code: 'h' }, { key_code: 'semicolon' }],
       simultaneous_options: { key_down_order: 'insensitive' },
@@ -386,6 +386,16 @@ const manipulators = [
       // { key_code: 'f', modifiers: ['command', 'option', 'control', 'shift'] },
     ],
     conditions: [{ bundle_identifiers: ['VSCode'], type: 'frontmost_application_if' }],
+  }),
+  manipulator({
+    description: 'h + ; + j -> VSCode go to route handler from clipboard',
+    from: {
+      simultaneous: [{ key_code: 'h' }, { key_code: 'semicolon' }, { key_code: 'j' }],
+      simultaneous_options: { key_down_order: 'insensitive' },
+    },
+    to: [
+      { shell_command: `/usr/local/bin/code --goto $(/usr/local/bin/ag -Q "registerRoute('$(pbpaste)" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)` },
+    ],
   }),
 
 
