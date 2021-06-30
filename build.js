@@ -404,6 +404,7 @@ const manipulators = [
   ...pickApp({ k: 'a', app: 'REAPER64' }),
   ...pickApp({ k: 'q', app: 'Axe-Edit' }),
   ...pickApp({ k: '1', app: '1Password 7' }),
+  ...pickApp({ k: 'g', app: 'Messages' }),
 
   krunkerMap('a', 'left_shift'),
   krunkerMap('d', 's'),
