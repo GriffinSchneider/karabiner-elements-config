@@ -407,6 +407,15 @@ const manipulators = [
     to: [{ shell_command: 'open http://ui.honeycomb.io/mable-test/datasets/prod-mable/trace?trace_id=$(pbpaste)'}],
   }),
 
+  manipulator({ global: true }, {
+    description: '[ + ] -> Move focus to the Menu Bar',
+    from: {
+      simultaneous: [{ key_code: 'open_bracket' }, { key_code: 'close_bracket' }],
+      simultaneous_options: { key_down_order: 'insensitive' },
+    },
+    to: [{ key_code: 'f2', modifiers: ['control'] }],
+  }),
+
   ...pickApp({ k: 'f', app: 'FireFox Developer Edition' }),
   ...pickApp({ k: 'c', app: 'Google Chrome' }),
   ...pickApp({ k: 'e', app: '/System/Volumes/Data/usr/local/Cellar/emacs-plus@27/HEAD-29708cb/Emacs' }),

@@ -2051,6 +2051,36 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "[ + ] -> Move focus to the Menu Bar",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "open_bracket"
+                    },
+                    {
+                      "key_code": "close_bracket"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "f2",
+                    "modifiers": [
+                      "control"
+                    ]
+                  }
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "Semicolon + f -> FireFox Developer Edition",
                 "from": {
                   "simultaneous": [
