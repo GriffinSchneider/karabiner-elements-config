@@ -414,6 +414,15 @@ const manipulators = [
       simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: [{ key_code: 'f2', modifiers: ['control'] }],
+  manipulator({ global: true }, {
+    description: 'cmd + [ + ] -> Toggle status bar in VSCode',
+    from: {
+      simultaneous: [{ key_code: 'open_bracket' }, { key_code: 'close_bracket' }],
+      simultaneous_options: { key_down_order: 'insensitive' },
+      modifiers: { mandatory: ['command'] },
+    },
+    to: [{ key_code: 'close_bracket', modifiers: ['control', 'option', 'command'] }],
+    conditions: [{ bundle_identifiers: ['VSCode'], type: 'frontmost_application_if' }],
   }),
 
   ...pickApp({ k: 'f', app: 'FireFox Developer Edition' }),

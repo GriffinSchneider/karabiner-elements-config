@@ -2081,6 +2081,50 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "cmd + [ + ] -> Toggle status bar in VSCode",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "open_bracket"
+                    },
+                    {
+                      "key_code": "close_bracket"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "command"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "close_bracket",
+                    "modifiers": [
+                      "control",
+                      "option",
+                      "command"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "VSCode"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "Semicolon + f -> FireFox Developer Edition",
                 "from": {
                   "simultaneous": [
