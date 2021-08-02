@@ -2142,6 +2142,12 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
+                      "firefox"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
                       "krunker"
                     ],
                     "type": "frontmost_application_unless"
@@ -2150,6 +2156,43 @@
                 "to": [
                   {
                     "shell_command": "open -a \"FireFox Developer Edition.app\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Semicolon + f in FireFox Developer Edition -> Cmd+Tab",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "f"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "firefox"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ]
               }
@@ -2176,6 +2219,12 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
+                      "Chrome"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
                       "krunker"
                     ],
                     "type": "frontmost_application_unless"
@@ -2184,6 +2233,43 @@
                 "to": [
                   {
                     "shell_command": "open -a \"Google Chrome.app\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Semicolon + c in Google Chrome -> Cmd+Tab",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "c"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "Chrome"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ]
               }
@@ -2210,6 +2296,12 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
+                      "Emacs"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
                       "krunker"
                     ],
                     "type": "frontmost_application_unless"
@@ -2218,6 +2310,43 @@
                 "to": [
                   {
                     "shell_command": "open -a \"/System/Volumes/Data/usr/local/Cellar/emacs-plus@27/HEAD-29708cb/Emacs.app\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Semicolon + e in /System/Volumes/Data/usr/local/Cellar/emacs-plus@27/HEAD-29708cb/Emacs -> Cmd+Tab",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "e"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "Emacs"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ]
               }
@@ -2244,6 +2373,12 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
+                      "iterm2"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
                       "krunker"
                     ],
                     "type": "frontmost_application_unless"
@@ -2252,6 +2387,43 @@
                 "to": [
                   {
                     "shell_command": "open -a \"ITerm.app\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Semicolon + i in ITerm -> Cmd+Tab",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "i"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "iterm2"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ]
               }
@@ -2301,7 +2473,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + v in Visual Studio Code",
+                "description": "Semicolon + v in Visual Studio Code -> Cmd+Tab",
                 "from": {
                   "simultaneous": [
                     {
@@ -2325,7 +2497,10 @@
                 ],
                 "to": [
                   {
-                    "key_code": "f6"
+                    "key_code": "tab",
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ]
               }
@@ -2352,6 +2527,12 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
+                      "Postico"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
                       "krunker"
                     ],
                     "type": "frontmost_application_unless"
@@ -2360,6 +2541,43 @@
                 "to": [
                   {
                     "shell_command": "open -a \"Postico.app\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Semicolon + o in Postico -> Cmd+Tab",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "o"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "Postico"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ]
               }
@@ -2386,6 +2604,12 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
+                      "tv.plex.desktop"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
                       "krunker"
                     ],
                     "type": "frontmost_application_unless"
@@ -2394,6 +2618,43 @@
                 "to": [
                   {
                     "shell_command": "open -a \"Plex.app\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Semicolon + p in Plex -> Cmd+Tab",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "p"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "tv.plex.desktop"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ]
               }
@@ -2420,6 +2681,12 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
+                      "Finder"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
                       "krunker"
                     ],
                     "type": "frontmost_application_unless"
@@ -2428,6 +2695,43 @@
                 "to": [
                   {
                     "shell_command": "open -a \"Finder.app\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Semicolon + r in Finder -> Cmd+Tab",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "r"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "Finder"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ]
               }
@@ -2454,6 +2758,12 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
+                      "iphonesimulator"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
                       "krunker"
                     ],
                     "type": "frontmost_application_unless"
@@ -2462,6 +2772,43 @@
                 "to": [
                   {
                     "shell_command": "open -a \"Simulator.app\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Semicolon + s in Simulator -> Cmd+Tab",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "s"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "iphonesimulator"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ]
               }
@@ -2488,6 +2835,12 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
+                      "reaper"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
                       "krunker"
                     ],
                     "type": "frontmost_application_unless"
@@ -2496,6 +2849,43 @@
                 "to": [
                   {
                     "shell_command": "open -a \"REAPER64.app\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Semicolon + a in REAPER64 -> Cmd+Tab",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "a"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "reaper"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ]
               }
@@ -2522,6 +2912,12 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
+                      "AxeEdit"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
                       "krunker"
                     ],
                     "type": "frontmost_application_unless"
@@ -2530,6 +2926,43 @@
                 "to": [
                   {
                     "shell_command": "open -a \"Axe-Edit.app\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Semicolon + q in Axe-Edit -> Cmd+Tab",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "q"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "AxeEdit"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ]
               }
@@ -2556,6 +2989,12 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
+                      "onepassword7"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
                       "krunker"
                     ],
                     "type": "frontmost_application_unless"
@@ -2564,6 +3003,43 @@
                 "to": [
                   {
                     "shell_command": "open -a \"1Password 7.app\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Semicolon + 1 in 1Password 7 -> Cmd+Tab",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "1"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "onepassword7"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ]
               }
@@ -2590,6 +3066,12 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
+                      "iChat"
+                    ],
+                    "type": "frontmost_application_unless"
+                  },
+                  {
+                    "bundle_identifiers": [
                       "krunker"
                     ],
                     "type": "frontmost_application_unless"
@@ -2598,6 +3080,43 @@
                 "to": [
                   {
                     "shell_command": "open -a \"Messages.app\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Semicolon + g in Messages -> Cmd+Tab",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "g"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "iChat"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "command"
+                    ]
                   }
                 ]
               }

@@ -55,25 +55,25 @@ const superShortcut = ({ keys, out, special }) => [
 ].filter(x => x);
 
 
-const pickApp = ({ k, app, bundleId, inApp }) => [manipulator({
+const pickApp = ({ k, app, bundleId }) => [manipulator({
   description: `Semicolon + ${k} -> ${app}`,
   from: {
     simultaneous: [{ key_code: 'semicolon' }, { key_code: k }],
     simultaneous_options: { key_down_order: 'insensitive' },
   },
-  conditions: (bundleId && inApp) ? [
+  conditions: [
     { bundle_identifiers: [bundleId], type: 'frontmost_application_unless' }
-  ]: undefined,
+  ],
   to: [{ shell_command: `open -a "${app}.app"` }],
-}), ...((bundleId && inApp) ? [manipulator({
-  description: `Semicolon + ${k} in ${app}`,
+}), manipulator({
+  description: `Semicolon + ${k} in ${app} -> Cmd+Tab`,
   from: {
     simultaneous: [{ key_code: 'semicolon' }, { key_code: k }],
     simultaneous_options: { key_down_order: 'insensitive' },
   },
   conditions: [{ bundle_identifiers: [bundleId], type: 'frontmost_application_if' }],
-  to: inApp,
-})] : [])];
+  to: [{ key_code: 'tab', modifiers: ['command'] }],
+})];
 
 const krunkerMap = (from, to) => manipulator({
   description: `Krunker: ${from} -> ${to}`,
@@ -425,22 +425,20 @@ const manipulators = [
     conditions: [{ bundle_identifiers: ['VSCode'], type: 'frontmost_application_if' }],
   }),
 
-  ...pickApp({ k: 'f', app: 'FireFox Developer Edition' }),
-  ...pickApp({ k: 'c', app: 'Google Chrome' }),
-  ...pickApp({ k: 'e', app: '/System/Volumes/Data/usr/local/Cellar/emacs-plus@27/HEAD-29708cb/Emacs' }),
-  // // ...pickApp({ k: 'e', app: 'Emacs' }),
-  ...pickApp({ k: 'i', app: 'ITerm' }),
-  ...pickApp({ k: 'v', app: 'Visual Studio Code', bundleId: 'VSCode', inApp: [
-    { key_code: 'f6' },
-  ]}),
-  ...pickApp({ k: 'o', app: 'Postico' }),
-  ...pickApp({ k: 'p', app: 'Plex' }),
-  ...pickApp({ k: 'r', app: 'Finder' }),
-  ...pickApp({ k: 's', app: 'Simulator' }),
-  ...pickApp({ k: 'a', app: 'REAPER64' }),
-  ...pickApp({ k: 'q', app: 'Axe-Edit' }),
-  ...pickApp({ k: '1', app: '1Password 7' }),
-  ...pickApp({ k: 'g', app: 'Messages' }),
+  ...pickApp({ k: 'f', app: 'FireFox Developer Edition', bundleId: 'firefox' }),
+  ...pickApp({ k: 'c', app: 'Google Chrome', bundleId: 'Chrome' }),
+  ...pickApp({ k: 'e', app: '/System/Volumes/Data/usr/local/Cellar/emacs-plus@27/HEAD-29708cb/Emacs', bundleId: 'Emacs' }),
+  // // ...pickApp({ k: 'e', app: 'Emacs', bundleId: 'Emacs' }),
+  ...pickApp({ k: 'i', app: 'ITerm', bundleId: 'iterm2' }),
+  ...pickApp({ k: 'v', app: 'Visual Studio Code', bundleId: 'VSCode' }),
+  ...pickApp({ k: 'o', app: 'Postico', bundleId: 'Postico' }),
+  ...pickApp({ k: 'p', app: 'Plex', bundleId: 'tv.plex.desktop' }),
+  ...pickApp({ k: 'r', app: 'Finder', bundleId: 'Finder' }),
+  ...pickApp({ k: 's', app: 'Simulator', bundleId: 'iphonesimulator' }),
+  ...pickApp({ k: 'a', app: 'REAPER64', bundleId: 'reaper' }),
+  ...pickApp({ k: 'q', app: 'Axe-Edit', bundleId: 'AxeEdit' }),
+  ...pickApp({ k: '1', app: '1Password 7', bundleId: 'onepassword7' }),
+  ...pickApp({ k: 'g', app: 'Messages', bundleId: 'iChat' }),
 
   krunkerMap('a', 'left_shift'),
   krunkerMap('d', 's'),
