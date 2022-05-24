@@ -93,6 +93,9 @@ const manipulators = [
   manipulator({
     description: 'Cmd-J+Semicolon -> Cmd-down',
     conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
+    parameters: {
+      'basic.simultaneous_threshold_milliseconds': 80,
+    },
     from: {
       simultaneous: [{ key_code: 'semicolon' }, { key_code: 'j' }], modifiers: { mandatory: ['command'] },
       simultaneous_options: { key_down_order: 'insensitive' },
@@ -108,6 +111,9 @@ const manipulators = [
   manipulator({
     description: 'Cmd-K+Semicolon -> Cmd-up',
     conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
+    parameters: {
+      'basic.simultaneous_threshold_milliseconds': 80,
+    },
     from: {
       simultaneous: [{ key_code: 'semicolon' }, { key_code: 'k' }], modifiers: { mandatory: ['command'] },
       simultaneous_options: { key_down_order: 'insensitive' },
@@ -123,6 +129,9 @@ const manipulators = [
   manipulator({
     description: 'Cmd-H+Semicolon -> Cmd-left',
     conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
+    parameters: {
+      'basic.simultaneous_threshold_milliseconds': 80,
+    },
     from: {
       simultaneous: [{ key_code: 'semicolon' }, { key_code: 'h' }], modifiers: { mandatory: ['command'] },
       simultaneous_options: { key_down_order: 'insensitive' },
@@ -138,6 +147,9 @@ const manipulators = [
   manipulator({
     description: 'Cmd-L+Semicolon -> Cmd-right',
     conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
+    parameters: {
+      'basic.simultaneous_threshold_milliseconds': 80,
+    },
     from: {
       simultaneous: [{ key_code: 'semicolon' }, { key_code: 'l' }], modifiers: { mandatory: ['command'] },
       simultaneous_options: { key_down_order: 'insensitive' },

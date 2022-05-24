@@ -83,6 +83,9 @@
                     "type": "frontmost_application_unless"
                   }
                 ],
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 80
+                },
                 "from": {
                   "simultaneous": [
                     {
@@ -152,6 +155,9 @@
                     "type": "frontmost_application_unless"
                   }
                 ],
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 80
+                },
                 "from": {
                   "simultaneous": [
                     {
@@ -222,6 +228,9 @@
                     "type": "frontmost_application_unless"
                   }
                 ],
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 80
+                },
                 "from": {
                   "simultaneous": [
                     {
@@ -292,6 +301,9 @@
                     "type": "frontmost_application_unless"
                   }
                 ],
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 80
+                },
                 "from": {
                   "simultaneous": [
                     {
