@@ -2096,7 +2096,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + e -> /System/Volumes/Data/usr/local/Cellar/emacs-plus@27/HEAD-29708cb/Emacs",
+                "description": "Semicolon + e -> Emacs",
                 "from": {
                   "simultaneous": [
                     {
@@ -2120,7 +2120,7 @@
                 ],
                 "to": [
                   {
-                    "shell_command": "open -a \"/System/Volumes/Data/usr/local/Cellar/emacs-plus@27/HEAD-29708cb/Emacs.app\""
+                    "shell_command": "open -a \"Emacs.app\""
                   }
                 ]
               }
@@ -2130,7 +2130,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + e in /System/Volumes/Data/usr/local/Cellar/emacs-plus@27/HEAD-29708cb/Emacs -> Cmd+Tab",
+                "description": "Semicolon + e in Emacs -> Cmd+Tab",
                 "from": {
                   "simultaneous": [
                     {
@@ -2309,7 +2309,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + o -> Postico",
+                "description": "Semicolon + o -> Postico 2",
                 "from": {
                   "simultaneous": [
                     {
@@ -2333,7 +2333,7 @@
                 ],
                 "to": [
                   {
-                    "shell_command": "open -a \"Postico.app\""
+                    "shell_command": "open -a \"Postico 2.app\""
                   }
                 ]
               }
@@ -2343,7 +2343,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + o in Postico -> Cmd+Tab",
+                "description": "Semicolon + o in Postico 2 -> Cmd+Tab",
                 "from": {
                   "simultaneous": [
                     {
@@ -2593,7 +2593,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + a -> REAPER64",
+                "description": "Semicolon + a -> REAPER-ARM",
                 "from": {
                   "simultaneous": [
                     {
@@ -2617,7 +2617,7 @@
                 ],
                 "to": [
                   {
-                    "shell_command": "open -a \"REAPER64.app\""
+                    "shell_command": "open -a \"REAPER-ARM.app\""
                   }
                 ]
               }
@@ -2627,7 +2627,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + a in REAPER64 -> Cmd+Tab",
+                "description": "Semicolon + a in REAPER-ARM -> Cmd+Tab",
                 "from": {
                   "simultaneous": [
                     {
@@ -2664,7 +2664,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + q -> Axe-Edit",
+                "description": "Semicolon + q -> Axe-Edit III",
                 "from": {
                   "simultaneous": [
                     {
@@ -2688,7 +2688,7 @@
                 ],
                 "to": [
                   {
-                    "shell_command": "open -a \"Axe-Edit.app\""
+                    "shell_command": "open -a \"Axe-Edit III.app\""
                   }
                 ]
               }
@@ -2698,7 +2698,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + q in Axe-Edit -> Cmd+Tab",
+                "description": "Semicolon + q in Axe-Edit III -> Cmd+Tab",
                 "from": {
                   "simultaneous": [
                     {
