@@ -53,12 +53,6 @@
                       "Emacs"
                     ],
                     "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
                   }
                 ],
                 "from": {
@@ -85,12 +79,6 @@
                   {
                     "bundle_identifiers": [
                       "Emacs"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -122,12 +110,6 @@
                       "VSCode"
                     ],
                     "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
                   }
                 ],
                 "from": {
@@ -155,12 +137,6 @@
                     "bundle_identifiers": [
                       "Emacs",
                       "VSCode"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -253,12 +229,6 @@
                       "Emacs"
                     ],
                     "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
                   }
                 ],
                 "from": {
@@ -288,12 +258,6 @@
                   {
                     "bundle_identifiers": [
                       "Emacs"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -328,12 +292,6 @@
                       "Emacs"
                     ],
                     "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
                   }
                 ],
                 "from": {
@@ -365,12 +323,6 @@
                   {
                     "bundle_identifiers": [
                       "Emacs"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -418,14 +370,7 @@
                     "key_code": "escape"
                   }
                 ],
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ]
+                "conditions": []
               }
             ]
           },
@@ -455,14 +400,7 @@
                     ]
                   }
                 ],
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ]
+                "conditions": []
               }
             ]
           },
@@ -499,12 +437,6 @@
                   {
                     "bundle_identifiers": [
                       "firefox"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -589,12 +521,6 @@
                     "bundle_identifiers": [
                       "VSCode",
                       "reaper"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -713,12 +639,6 @@
                       "VSCode",
                       "Postico",
                       "firefox"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -872,12 +792,6 @@
                       "firefox"
                     ],
                     "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
                   }
                 ]
               }
@@ -953,12 +867,6 @@
                   {
                     "bundle_identifiers": [
                       "VSCode"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -1040,12 +948,6 @@
                       "firefox",
                       "iterm",
                       "reaper"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -1236,12 +1138,6 @@
                       "VSCode"
                     ],
                     "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
                   }
                 ]
               }
@@ -1319,14 +1215,7 @@
                     ]
                   }
                 ],
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ]
+                "conditions": []
               }
             ]
           },
@@ -1363,12 +1252,6 @@
                   {
                     "bundle_identifiers": [
                       "VSCode"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -1448,12 +1331,6 @@
                       "VSCode"
                     ],
                     "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
                   }
                 ]
               }
@@ -1526,14 +1403,7 @@
                     ]
                   }
                 ],
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ]
+                "conditions": []
               }
             ]
           },
@@ -1566,14 +1436,7 @@
                     ]
                   }
                 ],
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ]
+                "conditions": []
               }
             ]
           },
@@ -1606,14 +1469,7 @@
                     ]
                   }
                 ],
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ]
+                "conditions": []
               }
             ]
           },
@@ -1652,12 +1508,6 @@
                       "firefox",
                       "VSCode",
                       "iterm"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -1808,14 +1658,7 @@
                     ]
                   }
                 ],
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ]
+                "conditions": []
               }
             ]
           },
@@ -1877,14 +1720,7 @@
                     ]
                   }
                 ],
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ]
+                "conditions": []
               }
             ]
           },
@@ -2006,14 +1842,7 @@
                     "shell_command": "/usr/local/bin/code --goto $(/usr/local/bin/ag -Q \"registerRoute('$(pbpaste)\" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)"
                   }
                 ],
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ]
+                "conditions": []
               }
             ]
           },
@@ -2145,12 +1974,6 @@
                       "firefox"
                     ],
                     "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
                   }
                 ],
                 "to": [
@@ -2220,12 +2043,6 @@
                   {
                     "bundle_identifiers": [
                       "Chrome"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -2299,12 +2116,6 @@
                       "Emacs"
                     ],
                     "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
                   }
                 ],
                 "to": [
@@ -2374,12 +2185,6 @@
                   {
                     "bundle_identifiers": [
                       "iterm2"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -2453,12 +2258,6 @@
                       "VSCode"
                     ],
                     "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
                   }
                 ],
                 "to": [
@@ -2528,12 +2327,6 @@
                   {
                     "bundle_identifiers": [
                       "Postico"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -2607,12 +2400,6 @@
                       "tv.plex.desktop"
                     ],
                     "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
                   }
                 ],
                 "to": [
@@ -2682,12 +2469,6 @@
                   {
                     "bundle_identifiers": [
                       "Finder"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -2761,12 +2542,6 @@
                       "iphonesimulator"
                     ],
                     "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
                   }
                 ],
                 "to": [
@@ -2836,12 +2611,6 @@
                   {
                     "bundle_identifiers": [
                       "reaper"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -2915,12 +2684,6 @@
                       "AxeEdit"
                     ],
                     "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
                   }
                 ],
                 "to": [
@@ -2990,12 +2753,6 @@
                   {
                     "bundle_identifiers": [
                       "onepassword7"
-                    ],
-                    "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -3069,12 +2826,6 @@
                       "iChat"
                     ],
                     "type": "frontmost_application_unless"
-                  },
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_unless"
                   }
                 ],
                 "to": [
@@ -3117,294 +2868,6 @@
                     "modifiers": [
                       "command"
                     ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Krunker: a -> left_shift",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "a"
-                },
-                "to": [
-                  {
-                    "key_code": "left_shift"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Krunker: d -> s",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "d"
-                },
-                "to": [
-                  {
-                    "key_code": "s"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Krunker: delete_or_backspace -> spacebar",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "delete_or_backspace"
-                },
-                "to": [
-                  {
-                    "key_code": "spacebar"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Krunker: e -> w",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "e"
-                },
-                "to": [
-                  {
-                    "key_code": "w"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Krunker: f -> d",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "f"
-                },
-                "to": [
-                  {
-                    "key_code": "d"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Krunker: r -> e",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "r"
-                },
-                "to": [
-                  {
-                    "key_code": "e"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Krunker: s -> a",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "s"
-                },
-                "to": [
-                  {
-                    "key_code": "a"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Krunker: t -> r",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "t"
-                },
-                "to": [
-                  {
-                    "key_code": "r"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Krunker: u -> r",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "u"
-                },
-                "to": [
-                  {
-                    "key_code": "r"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Krunker: w -> q",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "w"
-                },
-                "to": [
-                  {
-                    "key_code": "q"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Krunker: q -> tab",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "q"
-                },
-                "to": [
-                  {
-                    "key_code": "tab"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Krunker: z -> left_shift",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "krunker"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "z"
-                },
-                "to": [
-                  {
-                    "key_code": "left_shift"
                   }
                 ]
               }

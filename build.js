@@ -19,9 +19,9 @@ const manipulator = (opts, obj) => {
     ...obj,
     conditions: [
       ...(obj.conditions || []),
-      excludeApps && {
-        bundle_identifiers: ['krunker'], type: 'frontmost_application_unless'
-      },
+      // excludeApps && {
+      //   bundle_identifiers: ['krunker'], type: 'frontmost_application_unless'
+      // },
     ].filter(x => x),
   };
 };
@@ -74,13 +74,6 @@ const pickApp = ({ k, app, bundleId }) => [manipulator({
   conditions: [{ bundle_identifiers: [bundleId], type: 'frontmost_application_if' }],
   to: [{ key_code: 'tab', modifiers: ['command'] }],
 })];
-
-const krunkerMap = (from, to) => manipulator({
-  description: `Krunker: ${from} -> ${to}`,
-  conditions: [{ bundle_identifiers: ['krunker'], type: 'frontmost_application_if' }],
-  from: { key_code: from },
-  to: [{ key_code: to }],
-});
 
 
 const manipulators = [
@@ -414,6 +407,7 @@ const manipulators = [
       simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: [{ key_code: 'f2', modifiers: ['control'] }],
+  }),
   manipulator({ global: true }, {
     description: 'cmd + [ + ] -> Toggle status bar in VSCode',
     from: {
@@ -439,19 +433,6 @@ const manipulators = [
   ...pickApp({ k: 'q', app: 'Axe-Edit', bundleId: 'AxeEdit' }),
   ...pickApp({ k: '1', app: '1Password 7', bundleId: 'onepassword7' }),
   ...pickApp({ k: 'g', app: 'Messages', bundleId: 'iChat' }),
-
-  krunkerMap('a', 'left_shift'),
-  krunkerMap('d', 's'),
-  krunkerMap('delete_or_backspace', 'spacebar'),
-  krunkerMap('e', 'w'),
-  krunkerMap('f', 'd'),
-  krunkerMap('r', 'e'),
-  krunkerMap('s', 'a'),
-  krunkerMap('t', 'r'),
-  krunkerMap('u', 'r'),
-  krunkerMap('w', 'q'),
-  krunkerMap('q', 'tab'),
-  krunkerMap('z', 'left_shift'),
 ];
 
 
