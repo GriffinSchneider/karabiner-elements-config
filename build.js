@@ -27,14 +27,14 @@ const manipulator = (opts, obj) => {
 };
 
 
-const superShortcut = ({ keys, out, special }) => [
+const superShortcut = ({ keys, out, special, deshift }) => [
   manipulator({
     description: `${keys.join(' + ')} -> Super Shortcut`,
     from: {
       simultaneous: keys.map(k => ({ key_code: k })),
       simultaneous_options: { key_down_order: 'insensitive' },
     },
-    to: [{ key_code: out, modifiers: ['command', 'control', 'option', 'left_shift'] }],
+    to: [{ key_code: out, modifiers: ['command', 'control', 'option', deshift ? null : 'left_shift'].filter(x => x) }],
     conditions: [
       special && {
         bundle_identifiers: Object.keys(special), type: 'frontmost_application_unless',
