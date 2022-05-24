@@ -91,10 +91,28 @@ const manipulators = [
     to: { key_code: 'down_arrow', repeat: true },
   }),
   manipulator({
+    description: 'Cmd-J+Semicolon -> Cmd-down',
+    conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
+    from: {
+      simultaneous: [{ key_code: 'semicolon' }, { key_code: 'j' }], modifiers: { mandatory: ['command'] },
+      simultaneous_options: { key_down_order: 'insensitive' },
+    },
+    to: { key_code: 'down_arrow', modifiers: ['command'], repeat: true },
+  }),
+  manipulator({
     description: 'Cmd-K -> up',
     conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
     from: { key_code: 'k', modifiers: { mandatory: ['command'] } },
     to: { key_code: 'up_arrow', repeat: true },
+  }),
+  manipulator({
+    description: 'Cmd-K+Semicolon -> Cmd-up',
+    conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
+    from: {
+      simultaneous: [{ key_code: 'semicolon' }, { key_code: 'k' }], modifiers: { mandatory: ['command'] },
+      simultaneous_options: { key_down_order: 'insensitive' },
+    },
+    to: { key_code: 'up_arrow', modifiers: ['command'], repeat: true },
   }),
   manipulator({
     description: 'Cmd-H -> left',
@@ -103,10 +121,28 @@ const manipulators = [
     to: { key_code: 'left_arrow', repeat: true },
   }),
   manipulator({
+    description: 'Cmd-H+Semicolon -> Cmd-left',
+    conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
+    from: {
+      simultaneous: [{ key_code: 'semicolon' }, { key_code: 'h' }], modifiers: { mandatory: ['command'] },
+      simultaneous_options: { key_down_order: 'insensitive' },
+    },
+    to: { key_code: 'left_arrow', modifiers: ['command'], repeat: true },
+  }),
+  manipulator({
     description: 'Cmd-L -> right',
     conditions: [{ bundle_identifiers: ['Emacs', 'VSCode'], type: 'frontmost_application_unless' }],
     from: { key_code: 'l', modifiers: { mandatory: ['command'] } },
     to: { key_code: 'right_arrow', repeat: true },
+  }),
+  manipulator({
+    description: 'Cmd-L+Semicolon -> Cmd-right',
+    conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
+    from: {
+      simultaneous: [{ key_code: 'semicolon' }, { key_code: 'l' }], modifiers: { mandatory: ['command'] },
+      simultaneous_options: { key_down_order: 'insensitive' },
+    },
+    to: { key_code: 'right_arrow', modifiers: ['command'], repeat: true },
   }),
   manipulator({
     description: 'Cmd-Shift-J -> Cmd-J when important',
