@@ -66,13 +66,13 @@ const pickApp = ({ k, app, bundleId }) => [manipulator({
   ],
   to: [{ shell_command: `open -a "${app}.app"` }],
 }), manipulator({
-  description: `Semicolon + ${k} in ${app} -> Cmd+Tab`,
+  description: `Semicolon + ${k} in ${app} -> Cmd+\``,
   from: {
     simultaneous: [{ key_code: 'semicolon' }, { key_code: k }],
     simultaneous_options: { key_down_order: 'insensitive' },
   },
   conditions: [{ bundle_identifiers: [bundleId], type: 'frontmost_application_if' }],
-  to: [{ key_code: 'tab', modifiers: ['command'] }],
+  to: [{ key_code: 'grave_accent_and_tilde', modifiers: ['command'] }],
 })];
 
 

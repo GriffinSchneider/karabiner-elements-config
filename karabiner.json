@@ -1988,7 +1988,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + f in FireFox Developer Edition -> Cmd+Tab",
+                "description": "Semicolon + f in FireFox Developer Edition -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -2012,7 +2012,7 @@
                 ],
                 "to": [
                   {
-                    "key_code": "tab",
+                    "key_code": "grave_accent_and_tilde",
                     "modifiers": [
                       "command"
                     ]
@@ -2059,7 +2059,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + c in Google Chrome -> Cmd+Tab",
+                "description": "Semicolon + c in Google Chrome -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -2083,7 +2083,7 @@
                 ],
                 "to": [
                   {
-                    "key_code": "tab",
+                    "key_code": "grave_accent_and_tilde",
                     "modifiers": [
                       "command"
                     ]
@@ -2130,7 +2130,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + e in Emacs -> Cmd+Tab",
+                "description": "Semicolon + e in Emacs -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -2154,7 +2154,7 @@
                 ],
                 "to": [
                   {
-                    "key_code": "tab",
+                    "key_code": "grave_accent_and_tilde",
                     "modifiers": [
                       "command"
                     ]
@@ -2201,7 +2201,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + i in ITerm -> Cmd+Tab",
+                "description": "Semicolon + i in ITerm -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -2225,7 +2225,7 @@
                 ],
                 "to": [
                   {
-                    "key_code": "tab",
+                    "key_code": "grave_accent_and_tilde",
                     "modifiers": [
                       "command"
                     ]
@@ -2272,7 +2272,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + v in Visual Studio Code -> Cmd+Tab",
+                "description": "Semicolon + v in Visual Studio Code -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -2296,7 +2296,7 @@
                 ],
                 "to": [
                   {
-                    "key_code": "tab",
+                    "key_code": "grave_accent_and_tilde",
                     "modifiers": [
                       "command"
                     ]
@@ -2343,7 +2343,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + o in Postico 2 -> Cmd+Tab",
+                "description": "Semicolon + o in Postico 2 -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -2367,7 +2367,7 @@
                 ],
                 "to": [
                   {
-                    "key_code": "tab",
+                    "key_code": "grave_accent_and_tilde",
                     "modifiers": [
                       "command"
                     ]
@@ -2414,7 +2414,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + p in Plex -> Cmd+Tab",
+                "description": "Semicolon + p in Plex -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -2438,7 +2438,7 @@
                 ],
                 "to": [
                   {
-                    "key_code": "tab",
+                    "key_code": "grave_accent_and_tilde",
                     "modifiers": [
                       "command"
                     ]
@@ -2485,7 +2485,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + r in Finder -> Cmd+Tab",
+                "description": "Semicolon + r in Finder -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -2509,7 +2509,7 @@
                 ],
                 "to": [
                   {
-                    "key_code": "tab",
+                    "key_code": "grave_accent_and_tilde",
                     "modifiers": [
                       "command"
                     ]
@@ -2556,7 +2556,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + s in Simulator -> Cmd+Tab",
+                "description": "Semicolon + s in Simulator -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -2580,7 +2580,7 @@
                 ],
                 "to": [
                   {
-                    "key_code": "tab",
+                    "key_code": "grave_accent_and_tilde",
                     "modifiers": [
                       "command"
                     ]
@@ -2627,7 +2627,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + a in REAPER-ARM -> Cmd+Tab",
+                "description": "Semicolon + a in REAPER-ARM -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -2651,7 +2651,7 @@
                 ],
                 "to": [
                   {
-                    "key_code": "tab",
+                    "key_code": "grave_accent_and_tilde",
                     "modifiers": [
                       "command"
                     ]
@@ -2698,7 +2698,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + q in Axe-Edit III -> Cmd+Tab",
+                "description": "Semicolon + q in Axe-Edit III -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -2722,7 +2722,7 @@
                 ],
                 "to": [
                   {
-                    "key_code": "tab",
+                    "key_code": "grave_accent_and_tilde",
                     "modifiers": [
                       "command"
                     ]
@@ -2769,7 +2769,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + 1 in 1Password 7 -> Cmd+Tab",
+                "description": "Semicolon + 1 in 1Password 7 -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -2793,7 +2793,7 @@
                 ],
                 "to": [
                   {
-                    "key_code": "tab",
+                    "key_code": "grave_accent_and_tilde",
                     "modifiers": [
                       "command"
                     ]
@@ -2840,7 +2840,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + g in Messages -> Cmd+Tab",
+                "description": "Semicolon + g in Messages -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -2864,7 +2864,7 @@
                 ],
                 "to": [
                   {
-                    "key_code": "tab",
+                    "key_code": "grave_accent_and_tilde",
                     "modifiers": [
                       "command"
                     ]
