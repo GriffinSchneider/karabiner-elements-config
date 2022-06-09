@@ -98,7 +98,7 @@ const manipulators = [
   manipulator({
     description: 'Cmd-J -> down',
     conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
-    from: { key_code: 'j', modifiers: { mandatory: ['command'], optional: ['option', 'shift'] } },
+    from: { key_code: 'j', modifiers: { mandatory: ['command'], optional: ['shift'] } },
     to: { key_code: 'down_arrow', repeat: true },
   }),
   manipulator({
@@ -122,7 +122,7 @@ const manipulators = [
   manipulator({
     description: 'Cmd-K -> up',
     conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
-    from: { key_code: 'k', modifiers: { mandatory: ['command'], optional: ['option', 'shift'] } },
+    from: { key_code: 'k', modifiers: { mandatory: ['command'], optional: ['shift'] } },
     to: { key_code: 'up_arrow', repeat: true },
   }),
   manipulator({
