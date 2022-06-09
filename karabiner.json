@@ -62,7 +62,8 @@
                   "key_code": "j",
                   "modifiers": {
                     "optional": [
-                      "any"
+                      "option",
+                      "shift"
                     ],
                     "mandatory": [
                       "command"
@@ -179,7 +180,8 @@
                   "key_code": "k",
                   "modifiers": {
                     "optional": [
-                      "any"
+                      "option",
+                      "shift"
                     ],
                     "mandatory": [
                       "command"
@@ -297,7 +299,8 @@
                   "key_code": "h",
                   "modifiers": {
                     "optional": [
-                      "any"
+                      "option",
+                      "shift"
                     ],
                     "mandatory": [
                       "command"
@@ -415,7 +418,8 @@
                   "key_code": "l",
                   "modifiers": {
                     "optional": [
-                      "any"
+                      "option",
+                      "shift"
                     ],
                     "mandatory": [
                       "command"
