@@ -84,11 +84,20 @@ const manipulators = [
     to_if_alone: [{ key_code: 'escape' }],
   }),
 
+
   manipulator({
     description: 'Cmd-J -> down',
     conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
     from: { key_code: 'j', modifiers: {mandatory: ['command'] } },
     to: { key_code: 'down_arrow', repeat: true },
+  }),
+  manipulator({
+    description: 'Cmd-J+Slash -> Cmd-J',
+    from: {
+      simultaneous: [{ key_code: 'slash' }, { key_code: 'j' }], modifiers: { mandatory: ['command'] },
+      simultaneous_options: { key_down_order: 'insensitive' },
+    },
+    to: { key_code: 'j', modifiers: ['command'] },
   }),
   manipulator({
     description: 'Cmd-J+Semicolon -> Cmd-down',
@@ -109,6 +118,14 @@ const manipulators = [
     to: { key_code: 'up_arrow', repeat: true },
   }),
   manipulator({
+    description: 'Cmd-K+Slash -> Cmd-K',
+    from: {
+      simultaneous: [{ key_code: 'slash' }, { key_code: 'k' }], modifiers: { mandatory: ['command'] },
+      simultaneous_options: { key_down_order: 'insensitive' },
+    },
+    to: { key_code: 'k', modifiers: ['command'] },
+  }),
+  manipulator({
     description: 'Cmd-K+Semicolon -> Cmd-up',
     conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
     parameters: {
@@ -125,6 +142,14 @@ const manipulators = [
     conditions: [{ bundle_identifiers: ['Emacs', 'VSCode'], type: 'frontmost_application_unless' }],
     from: { key_code: 'h', modifiers: { mandatory: ['command'] } },
     to: { key_code: 'left_arrow', repeat: true },
+  }),
+  manipulator({
+    description: 'Cmd-H+Slash -> Cmd-H',
+    from: {
+      simultaneous: [{ key_code: 'slash' }, { key_code: 'h' }], modifiers: { mandatory: ['command'] },
+      simultaneous_options: { key_down_order: 'insensitive' },
+    },
+    to: { key_code: 'h', modifiers: ['command'] },
   }),
   manipulator({
     description: 'Cmd-H+Semicolon -> Cmd-left',
@@ -145,6 +170,14 @@ const manipulators = [
     to: { key_code: 'right_arrow', repeat: true },
   }),
   manipulator({
+    description: 'Cmd-L+Slash -> Cmd-L',
+    from: {
+      simultaneous: [{ key_code: 'slash' }, { key_code: 'l' }], modifiers: { mandatory: ['command'] },
+      simultaneous_options: { key_down_order: 'insensitive' },
+    },
+    to: { key_code: 'l', modifiers: ['command'] },
+  }),
+  manipulator({
     description: 'Cmd-L+Semicolon -> Cmd-right',
     conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
     parameters: {
@@ -155,18 +188,6 @@ const manipulators = [
       simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: { key_code: 'right_arrow', modifiers: ['command'], repeat: true },
-  }),
-  manipulator({
-    description: 'Cmd-Shift-J -> Cmd-J when important',
-    conditions: [{ bundle_identifiers: ['firefox'], type: 'frontmost_application_if' }],
-    from: { key_code: 'j', modifiers: { mandatory: ['command', 'shift'] } },
-    to: { key_code: 'j', modifiers: ['command'] },
-  }),
-  manipulator({
-    description: 'Cmd-Shift-K -> Cmd-K when important',
-    conditions: [{ bundle_identifiers: ['firefox'], type: 'frontmost_application_if' }],
-    from: { key_code: 'k', modifiers: { mandatory: ['command', 'shift'] } },
-    to: { key_code: 'k', modifiers: ['command'] },
   }),
 
   manipulator({
@@ -193,6 +214,7 @@ const manipulators = [
     from: { key_code: 'k', modifiers: {mandatory: ['command', 'option'] } },
     to: { key_code: 'page_up', modifiers: ['control', 'shift'], repeat: true },
   }),
+
 
   manipulator({
     description: 'J + K -> escape',

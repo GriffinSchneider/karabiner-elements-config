@@ -74,6 +74,39 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "Cmd-J+Slash -> Cmd-J",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "slash"
+                    },
+                    {
+                      "key_code": "j"
+                    }
+                  ],
+                  "modifiers": {
+                    "mandatory": [
+                      "command"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": {
+                  "key_code": "j",
+                  "modifiers": [
+                    "command"
+                  ]
+                },
+                "conditions": []
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "Cmd-J+Semicolon -> Cmd-down",
                 "conditions": [
                   {
@@ -139,6 +172,39 @@
                   "key_code": "up_arrow",
                   "repeat": true
                 }
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Cmd-K+Slash -> Cmd-K",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "slash"
+                    },
+                    {
+                      "key_code": "k"
+                    }
+                  ],
+                  "modifiers": {
+                    "mandatory": [
+                      "command"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": {
+                  "key_code": "k",
+                  "modifiers": [
+                    "command"
+                  ]
+                },
+                "conditions": []
               }
             ]
           },
@@ -219,6 +285,39 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "Cmd-H+Slash -> Cmd-H",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "slash"
+                    },
+                    {
+                      "key_code": "h"
+                    }
+                  ],
+                  "modifiers": {
+                    "mandatory": [
+                      "command"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": {
+                  "key_code": "h",
+                  "modifiers": [
+                    "command"
+                  ]
+                },
+                "conditions": []
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "Cmd-H+Semicolon -> Cmd-left",
                 "conditions": [
                   {
@@ -292,6 +391,39 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "Cmd-L+Slash -> Cmd-L",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "slash"
+                    },
+                    {
+                      "key_code": "l"
+                    }
+                  ],
+                  "modifiers": {
+                    "mandatory": [
+                      "command"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": {
+                  "key_code": "l",
+                  "modifiers": [
+                    "command"
+                  ]
+                },
+                "conditions": []
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "Cmd-L+Semicolon -> Cmd-right",
                 "conditions": [
                   {
@@ -328,68 +460,6 @@
                     "command"
                   ],
                   "repeat": true
-                }
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Cmd-Shift-J -> Cmd-J when important",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "firefox"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "j",
-                  "modifiers": {
-                    "mandatory": [
-                      "command",
-                      "shift"
-                    ]
-                  }
-                },
-                "to": {
-                  "key_code": "j",
-                  "modifiers": [
-                    "command"
-                  ]
-                }
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Cmd-Shift-K -> Cmd-K when important",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "firefox"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "from": {
-                  "key_code": "k",
-                  "modifiers": {
-                    "mandatory": [
-                      "command",
-                      "shift"
-                    ]
-                  }
-                },
-                "to": {
-                  "key_code": "k",
-                  "modifiers": [
-                    "command"
-                  ]
                 }
               }
             ]
