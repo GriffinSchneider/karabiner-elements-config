@@ -23,17 +23,20 @@ const manipulator = (opts, obj) => {
       //   bundle_identifiers: ['krunker'], type: 'frontmost_application_unless'
       // },
     ].filter(x => x),
-    // Default to making all modifiers optional, because they automatically get passed through
-    // to the `to` command and that's always what I want.
-    from: obj.from && obj.from.modifiers && obj.from.modifiers.mandatory
-      ? {
-        ...obj.from,
-        modifiers: {
-          ...obj.from.modifiers,
-          optional: obj.from.modifiers.optional || ['any'],
-        }
+    from: !obj.from ? obj.from : {
+      ...obj.from,
+      // Default to making all modifiers optional, because they automatically get passed through
+      // to the `to` command and that's always what I want.
+      modifiers: {
+        optional: (obj.from.modifiers || {}).optional || ['any'],
+        ...(obj.from.modifiers || {}),
+      },
+      // Default to key_down_order: 'insensitive'
+      simultaneous_options: {
+        key_down_order: 'insensitive',
+        ...(obj.from.simultaneous_options || {}),
       }
-      : obj.from
+    },
   };
 };
 
@@ -43,7 +46,6 @@ const superShortcut = ({ keys, out, special, deshift }) => [
     description: `${keys.join(' + ')} -> Super Shortcut`,
     from: {
       simultaneous: keys.map(k => ({ key_code: k })),
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: [{ key_code: out, modifiers: ['command', 'control', 'option', deshift ? null : 'left_shift'].filter(x => x) }],
     conditions: [
@@ -56,7 +58,6 @@ const superShortcut = ({ keys, out, special, deshift }) => [
     description: `${keys.join(' + ')} -> Super Shortcut (${sp})`,
     from: {
       simultaneous: keys.map(k => ({ key_code: k })),
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     conditions: [{
       bundle_identifiers: [sp], type: 'frontmost_application_if',
@@ -70,7 +71,6 @@ const pickApp = ({ k, app, bundleId }) => [manipulator({
   description: `Semicolon + ${k} -> ${app}`,
   from: {
     simultaneous: [{ key_code: 'semicolon' }, { key_code: k }],
-    simultaneous_options: { key_down_order: 'insensitive' },
   },
   conditions: [
     { bundle_identifiers: [bundleId], type: 'frontmost_application_unless' }
@@ -80,7 +80,6 @@ const pickApp = ({ k, app, bundleId }) => [manipulator({
   description: `Semicolon + ${k} in ${app} -> Cmd+\``,
   from: {
     simultaneous: [{ key_code: 'semicolon' }, { key_code: k }],
-    simultaneous_options: { key_down_order: 'insensitive' },
   },
   conditions: [{ bundle_identifiers: [bundleId], type: 'frontmost_application_if' }],
   to: [{ key_code: 'grave_accent_and_tilde', modifiers: ['command'] }],
@@ -106,7 +105,6 @@ const manipulators = [
     description: 'Cmd-J+Slash -> Cmd-J',
     from: {
       simultaneous: [{ key_code: 'slash' }, { key_code: 'j' }], modifiers: { mandatory: ['command'] },
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: { key_code: 'j', modifiers: ['command'] },
   }),
@@ -118,7 +116,6 @@ const manipulators = [
     },
     from: {
       simultaneous: [{ key_code: 'semicolon' }, { key_code: 'j' }], modifiers: { mandatory: ['command'] },
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: { key_code: 'down_arrow', modifiers: ['command'], repeat: true },
   }),
@@ -132,7 +129,6 @@ const manipulators = [
     description: 'Cmd-K+Slash -> Cmd-K',
     from: {
       simultaneous: [{ key_code: 'slash' }, { key_code: 'k' }], modifiers: { mandatory: ['command'] },
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: { key_code: 'k', modifiers: ['command'] },
   }),
@@ -144,7 +140,6 @@ const manipulators = [
     },
     from: {
       simultaneous: [{ key_code: 'semicolon' }, { key_code: 'k' }], modifiers: { mandatory: ['command'] },
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: { key_code: 'up_arrow', modifiers: ['command'], repeat: true },
   }),
@@ -158,7 +153,6 @@ const manipulators = [
     description: 'Cmd-H+Slash -> Cmd-H',
     from: {
       simultaneous: [{ key_code: 'slash' }, { key_code: 'h' }], modifiers: { mandatory: ['command'] },
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: { key_code: 'h', modifiers: ['command'] },
   }),
@@ -170,7 +164,6 @@ const manipulators = [
     },
     from: {
       simultaneous: [{ key_code: 'semicolon' }, { key_code: 'h' }], modifiers: { mandatory: ['command'] },
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: { key_code: 'left_arrow', modifiers: ['command'], repeat: true },
   }),
@@ -184,7 +177,6 @@ const manipulators = [
     description: 'Cmd-L+Slash -> Cmd-L',
     from: {
       simultaneous: [{ key_code: 'slash' }, { key_code: 'l' }], modifiers: { mandatory: ['command'] },
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: { key_code: 'l', modifiers: ['command'] },
   }),
@@ -196,7 +188,6 @@ const manipulators = [
     },
     from: {
       simultaneous: [{ key_code: 'semicolon' }, { key_code: 'l' }], modifiers: { mandatory: ['command'] },
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: { key_code: 'right_arrow', modifiers: ['command'], repeat: true },
   }),
@@ -231,7 +222,6 @@ const manipulators = [
     description: 'J + K -> escape',
     from: {
       simultaneous: [{ key_code: 'j' }, { key_code: 'k' }],
-      simultaneous_options: {key_down_order: 'insensitive'},
     },
     to: [{ key_code: 'escape' }],
   }),
@@ -239,7 +229,6 @@ const manipulators = [
     description: 'J + W -> Save (Cmd-S)',
     from: {
       simultaneous: [{ key_code: 'j' }, { key_code: 'w' }],
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: [{ key_code: 's', modifiers: ['command'] }],
   }),
@@ -334,7 +323,6 @@ const manipulators = [
     },
     from: {
       simultaneous: [{ key_code: 'k' }, { key_code: 'o' }, { key_code: 'q' }],
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: [{ key_code: 'q', modifiers: ['command'] }],
   }),
@@ -356,7 +344,6 @@ const manipulators = [
   //   from: {
 
   //     simultaneous: [{ key_code: 'spacebar' }, { key_code: 'm' }, { key_code: 'comma' }],
-  //     simultaneous_options: { key_down_order: 'insensitive' },
   //   },
   //   to: [{ key_code: 'm', modifiers: ['command', 'control'] }],
   // }),
@@ -367,7 +354,6 @@ const manipulators = [
   //   },
   //   from: {
   //     simultaneous: [{ key_code: 'spacebar' }, { key_code: 'comma' }, { key_code: 'period' }],
-  //     simultaneous_options: { key_down_order: 'insensitive' },
   //   },
   //   to: [{ key_code: 'slash', modifiers: ['command', 'control'] }],
   // }),
@@ -378,7 +364,6 @@ const manipulators = [
   //   },
   //   from: {
   //     simultaneous: [{ key_code: 'spacebar' }, { key_code: 'j' }, { key_code: 'k' }],
-  //     simultaneous_options: { key_down_order: 'insensitive' },
   //   },
   //   to: [{ key_code: 'comma', modifiers: ['command', 'control'] }],
   // }),
@@ -389,7 +374,6 @@ const manipulators = [
   //   },
   //   from: {
   //     simultaneous: [{ key_code: 'spacebar' }, { key_code: 'k' }, { key_code: 'l' }],
-  //     simultaneous_options: { key_down_order: 'insensitive' },
   //   },
   //   to: [{ key_code: 'period', modifiers: ['command', 'control'] }],
   // }),
@@ -400,7 +384,6 @@ const manipulators = [
   //   },
   //   from: {
   //     simultaneous: [{ key_code: 'spacebar' }, { key_code: 'j' }, { key_code: 'l' }],
-  //     simultaneous_options: { key_down_order: 'insensitive' },
   //   },
   //   to: [{ key_code: 'j', modifiers: ['command', 'control'] }],
   // }),
@@ -411,7 +394,6 @@ const manipulators = [
   //   },
   //   from: {
   //     simultaneous: [{ key_code: 'spacebar' }, { key_code: 'm' }, { key_code: 'period' }],
-  //     simultaneous_options: { key_down_order: 'insensitive' },
   //   },
   //   to: [{ key_code: 'k', modifiers: ['command', 'control'] }],
   // }),
@@ -420,7 +402,6 @@ const manipulators = [
     description: 'Semicolon + m -> Mute Google Meet in Chrome',
     from: {
       simultaneous: [{ key_code: 'semicolon' }, { key_code: 'm' }],
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: [
       { shell_command: `open -a "Google Chrome.app"`, hold_down_milliseconds: 500 },
@@ -433,7 +414,6 @@ const manipulators = [
     description: 'h + ; -> VSCode go to route handler',
     from: {
       simultaneous: [{ key_code: 'h' }, { key_code: 'semicolon' }],
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: [
       { key_code: 'v', modifiers: [] },
@@ -465,7 +445,6 @@ const manipulators = [
     description: 'h + ; + j -> VSCode go to route handler from clipboard',
     from: {
       simultaneous: [{ key_code: 'h' }, { key_code: 'semicolon' }, { key_code: 'j' }],
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: [
       { shell_command: `/usr/local/bin/code --goto $(/usr/local/bin/ag -Q "registerRoute('$(pbpaste)" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)` },
@@ -476,7 +455,6 @@ const manipulators = [
     description: 'Space + h + ; -> Open correlationId from clipboard in Honeycomb',
     from: {
       simultaneous: [{ key_code: 'semicolon' }, { key_code: 'h' }, { key_code: 'f'}],
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: [{ shell_command: 'open http://ui.honeycomb.io/mable-test/datasets/prod-mable/trace?trace_id=$(pbpaste)'}],
   }),
@@ -485,7 +463,6 @@ const manipulators = [
     description: '[ + ] -> Move focus to the Menu Bar',
     from: {
       simultaneous: [{ key_code: 'open_bracket' }, { key_code: 'close_bracket' }],
-      simultaneous_options: { key_down_order: 'insensitive' },
     },
     to: [{ key_code: 'f2', modifiers: ['control'] }],
   }),
@@ -493,7 +470,6 @@ const manipulators = [
     description: 'cmd + [ + ] -> Toggle status bar in VSCode',
     from: {
       simultaneous: [{ key_code: 'open_bracket' }, { key_code: 'close_bracket' }],
-      simultaneous_options: { key_down_order: 'insensitive' },
       modifiers: { mandatory: ['command'] },
     },
     to: [{ key_code: 'close_bracket', modifiers: ['control', 'option', 'command'] }],
