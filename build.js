@@ -23,6 +23,17 @@ const manipulator = (opts, obj) => {
       //   bundle_identifiers: ['krunker'], type: 'frontmost_application_unless'
       // },
     ].filter(x => x),
+    // Default to making all modifiers optional, because they automatically get passed through
+    // to the `to` command and that's always what I want.
+    from: obj.from && obj.from.modifiers && obj.from.modifiers.mandatory
+      ? {
+        ...obj.from,
+        modifiers: {
+          ...obj.from.modifiers,
+          optional: obj.from.modifiers.optional || ['any'],
+        }
+      }
+      : obj.from
   };
 };
 
