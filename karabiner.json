@@ -523,81 +523,6 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Alt-J -> Next tab",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "Emacs"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ],
-                "from": {
-                  "key_code": "j",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ],
-                    "mandatory": [
-                      "option"
-                    ]
-                  },
-                  "simultaneous_options": {
-                    "key_down_order": "insensitive"
-                  }
-                },
-                "to": {
-                  "key_code": "tab",
-                  "modifiers": [
-                    "control"
-                  ],
-                  "repeat": true
-                }
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Alt-K -> Previous tab",
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "Emacs"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ],
-                "from": {
-                  "key_code": "k",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ],
-                    "mandatory": [
-                      "option"
-                    ]
-                  },
-                  "simultaneous_options": {
-                    "key_down_order": "insensitive"
-                  }
-                },
-                "to": {
-                  "key_code": "tab",
-                  "modifiers": [
-                    "control",
-                    "shift"
-                  ],
-                  "repeat": true
-                }
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
                 "description": "Cmd-Alt-J -> Move tab forwards",
                 "conditions": [
                   {
@@ -663,6 +588,81 @@
                 },
                 "to": {
                   "key_code": "page_up",
+                  "modifiers": [
+                    "control",
+                    "shift"
+                  ],
+                  "repeat": true
+                }
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Alt-J -> Next tab",
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "Emacs"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ],
+                    "mandatory": [
+                      "option"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": {
+                  "key_code": "tab",
+                  "modifiers": [
+                    "control"
+                  ],
+                  "repeat": true
+                }
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Alt-K -> Previous tab",
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "Emacs"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ],
+                    "mandatory": [
+                      "option"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": {
+                  "key_code": "tab",
                   "modifiers": [
                     "control",
                     "shift"
