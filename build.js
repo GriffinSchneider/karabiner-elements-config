@@ -85,15 +85,37 @@ const pickApp = ({ k, app, bundleId }) => [manipulator({
   to: [{ key_code: 'grave_accent_and_tilde', modifiers: ['command'] }],
 })];
 
-
-const manipulators = [
+const commonManipulators = [
   manipulator({ global: true }, {
     description: 'Change caps_lock to control when used as modifier, escape when used alone',
     from: { key_code: 'caps_lock', modifiers: { optional: ['any'] } },
     to: [{ key_code: 'left_control' }],
     to_if_alone: [{ key_code: 'escape' }],
   }),
+  manipulator({ global: true }, {
+    description: 'Cmd-Ctrl-Opt-Shift-1 -> Select default profile',
+    from: {
+      key_code: '1',
+      modifiers: { mandatory: ['command', 'control', 'option', 'shift'] },
+    },
+    to: [
+      { shell_command: `"/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli" --select-profile "Default profile"` },
+    ],
+  }),
+  manipulator({ global: true }, {
+    description: 'Cmd-Ctrl-Opt-Shift-2 -> Select "Minimal" profile',
+    from: {
+      key_code: '2',
+      modifiers: { mandatory: ['command', 'control', 'option', 'shift'] },
+    },
+    to: [
+      { shell_command: `"/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli" --select-profile "Minimal"` },
+    ],
+  }),
+]
 
+const defaultProfileManipulators = [
+  ...commonManipulators,
 
   manipulator({
     description: 'Cmd-J -> down',
@@ -518,7 +540,9 @@ profile.complex_modifications = {
     'basic.to_if_held_down_threshold_milliseconds': 500,
     'mouse_motion_to_scroll.speed': 100,
   },
-  rules: manipulators.map(m => ({ manipulators: [m] })),
+  rules: defaultProfileManipulators.map(m => ({ manipulators: [m] })),
 };
+
+config.profiles.find(p => p.name === 'Minimal').complex_modifications.rules = commonManipulators.map(m => ({ manipulators: [m] }));
 
 fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
