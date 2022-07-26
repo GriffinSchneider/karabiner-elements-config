@@ -103,6 +103,9 @@ const manipulators = [
   }),
   manipulator({
     description: 'Cmd-J+Slash -> Cmd-J',
+    parameters: {
+      'basic.simultaneous_threshold_milliseconds': 80,
+    },
     from: {
       simultaneous: [{ key_code: 'slash' }, { key_code: 'j' }], modifiers: { mandatory: ['command'] },
     },
@@ -127,6 +130,9 @@ const manipulators = [
   }),
   manipulator({
     description: 'Cmd-K+Slash -> Cmd-K',
+    parameters: {
+      'basic.simultaneous_threshold_milliseconds': 80,
+    },
     from: {
       simultaneous: [{ key_code: 'slash' }, { key_code: 'k' }], modifiers: { mandatory: ['command'] },
     },
@@ -151,6 +157,9 @@ const manipulators = [
   }),
   manipulator({
     description: 'Cmd-H+Slash -> Cmd-H',
+    parameters: {
+      'basic.simultaneous_threshold_milliseconds': 80,
+    },
     from: {
       simultaneous: [{ key_code: 'slash' }, { key_code: 'h' }], modifiers: { mandatory: ['command'] },
     },
@@ -175,6 +184,9 @@ const manipulators = [
   }),
   manipulator({
     description: 'Cmd-L+Slash -> Cmd-L',
+    parameters: {
+      'basic.simultaneous_threshold_milliseconds': 80,
+    },
     from: {
       simultaneous: [{ key_code: 'slash' }, { key_code: 'l' }], modifiers: { mandatory: ['command'] },
     },

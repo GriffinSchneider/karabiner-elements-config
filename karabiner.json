@@ -84,6 +84,9 @@
               {
                 "type": "basic",
                 "description": "Cmd-J+Slash -> Cmd-J",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 80
+                },
                 "from": {
                   "simultaneous": [
                     {
@@ -201,6 +204,9 @@
               {
                 "type": "basic",
                 "description": "Cmd-K+Slash -> Cmd-K",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 80
+                },
                 "from": {
                   "simultaneous": [
                     {
@@ -320,6 +326,9 @@
               {
                 "type": "basic",
                 "description": "Cmd-H+Slash -> Cmd-H",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 80
+                },
                 "from": {
                   "simultaneous": [
                     {
@@ -439,6 +448,9 @@
               {
                 "type": "basic",
                 "description": "Cmd-L+Slash -> Cmd-L",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 80
+                },
                 "from": {
                   "simultaneous": [
                     {
