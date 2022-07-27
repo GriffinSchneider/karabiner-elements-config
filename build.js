@@ -454,7 +454,7 @@ const defaultProfileManipulators = [
       { key_code: 'i', modifiers: [] },
       { key_code: 'quote', modifiers: [] },
       { key_code: 'c', modifiers: ['command'] },
-      { shell_command: `/usr/local/bin/code --goto $(/usr/local/bin/ag -Q "registerRoute('$(pbpaste)" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)` },
+      { shell_command: `/usr/local/bin/code --goto $(/opt/homebrew/bin/ag -Q "registerRoute('$(pbpaste)" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)` },
       // Alternate way in VSCode with a search editor:
       // { key_code: 'f', modifiers: ['command', 'option', 'control'] },
       // { key_code: 'o', modifiers: ['control'] },
@@ -481,7 +481,7 @@ const defaultProfileManipulators = [
       simultaneous: [{ key_code: 'h' }, { key_code: 'semicolon' }, { key_code: 'j' }],
     },
     to: [
-      { shell_command: `/usr/local/bin/code --goto $(/usr/local/bin/ag -Q "registerRoute('$(pbpaste)" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)` },
+      { shell_command: `/usr/local/bin/code --goto $(/opt/homebrew/bin/ag -Q "registerRoute('$(pbpaste)" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)` },
     ],
   }),
 

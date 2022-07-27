@@ -2395,7 +2395,7 @@
                     ]
                   },
                   {
-                    "shell_command": "/usr/local/bin/code --goto $(/usr/local/bin/ag -Q \"registerRoute('$(pbpaste)\" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)"
+                    "shell_command": "/usr/local/bin/code --goto $(/opt/homebrew/bin/ag -Q \"registerRoute('$(pbpaste)\" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)"
                   }
                 ],
                 "conditions": [
@@ -2437,7 +2437,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/code --goto $(/usr/local/bin/ag -Q \"registerRoute('$(pbpaste)\" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)"
+                    "shell_command": "/usr/local/bin/code --goto $(/opt/homebrew/bin/ag -Q \"registerRoute('$(pbpaste)\" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)"
                   }
                 ],
                 "conditions": []
