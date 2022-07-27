@@ -3294,7 +3294,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + a -> REAPER-ARM",
+                "description": "Semicolon + a -> REAPER",
                 "from": {
                   "simultaneous": [
                     {
@@ -3323,7 +3323,7 @@
                 ],
                 "to": [
                   {
-                    "shell_command": "open -a \"REAPER-ARM.app\""
+                    "shell_command": "open -a \"REAPER.app\""
                   }
                 ]
               }
@@ -3333,7 +3333,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + a in REAPER-ARM -> Cmd+`",
+                "description": "Semicolon + a in REAPER -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {

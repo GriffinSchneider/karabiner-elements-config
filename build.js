@@ -520,7 +520,7 @@ const defaultProfileManipulators = [
   ...pickApp({ k: 'p', app: 'Plex', bundleId: 'tv.plex.desktop' }),
   ...pickApp({ k: 'r', app: 'Finder', bundleId: 'Finder' }),
   ...pickApp({ k: 's', app: 'Simulator', bundleId: 'iphonesimulator' }),
-  ...pickApp({ k: 'a', app: 'REAPER-ARM', bundleId: 'reaper' }),
+  ...pickApp({ k: 'a', app: 'REAPER', bundleId: 'reaper' }),
   ...pickApp({ k: 'q', app: 'Axe-Edit III', bundleId: 'AxeEdit' }),
   ...pickApp({ k: '1', app: '1Password 7', bundleId: 'onepassword7' }),
   ...pickApp({ k: 'g', app: 'Messages', bundleId: 'iChat' }),
