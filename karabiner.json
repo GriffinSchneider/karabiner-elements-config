@@ -3613,6 +3613,87 @@
                 ]
               }
             ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Semicolon + x -> Totalmix",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "x"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "de.rme-audio.TotalmixFX"
+                    ],
+                    "type": "frontmost_application_unless"
+                  }
+                ],
+                "to": [
+                  {
+                    "shell_command": "open -a \"Totalmix.app\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "Semicolon + x in Totalmix -> Cmd+`",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "semicolon"
+                    },
+                    {
+                      "key_code": "x"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "de.rme-audio.TotalmixFX"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "grave_accent_and_tilde",
+                    "modifiers": [
+                      "command"
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },

@@ -524,6 +524,7 @@ const defaultProfileManipulators = [
   ...pickApp({ k: 'q', app: 'Axe-Edit III', bundleId: 'AxeEdit' }),
   ...pickApp({ k: '1', app: '1Password 7', bundleId: 'onepassword7' }),
   ...pickApp({ k: 'g', app: 'Messages', bundleId: 'iChat' }),
+  ...pickApp({ k: 'x', app: 'Totalmix', bundleId: 'de.rme-audio.TotalmixFX' }),
 ];
 
 
