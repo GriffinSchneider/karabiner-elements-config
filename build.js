@@ -251,6 +251,37 @@ const defaultProfileManipulators = [
     to: { key_code: 'tab', modifiers: ['control', 'shift'], repeat: true },
   }),
 
+  manipulator({
+    description: 'J + X -> Command palette in VSCode',
+    conditions: [{ bundle_identifiers: ['VSCode'], type: 'frontmost_application_if' }],
+    from: {
+      simultaneous: [{ key_code: 'j' }, { key_code: 'x' }],
+    },
+    to: [{ key_code: 'p', modifiers: ['command', 'left_shift'] }],
+  }),
+  manipulator({
+    description: 'J + X -> Action list in reaper',
+    conditions: [{ bundle_identifiers: ['REAPER'], type: 'frontmost_application_if' }],
+    from: {
+      simultaneous: [{ key_code: 'j' }, { key_code: 'x' }],
+    },
+      to: [{ key_code: 'slash', modifiers: ['left_shift', 'option'] }],
+  }),
+  manipulator({
+    description: 'J + X -> M-x in Emacs',
+    conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_if' }],
+    from: {
+      simultaneous: [{ key_code: 'j' }, { key_code: 'x' }],
+    },
+      to: [{ key_code: 'x', modifiers: ['option'] }],
+  }),
+  manipulator({
+    description: 'J + X -> Help search',
+    from: {
+      simultaneous: [{ key_code: 'j' }, { key_code: 'x' }],
+    },
+    to: [{ key_code: 'slash', modifiers: ['command','shift'] }],
+  }),
 
   manipulator({
     description: 'J + K -> escape',
@@ -266,20 +297,13 @@ const defaultProfileManipulators = [
     },
     to: [{ key_code: 's', modifiers: ['command'] }],
   }),
+
   ...superShortcut({ keys: ['j', 'v'], out: 'v' , special: {
     firefox: {
       to: [
         { key_code: 'l', modifiers: ['command'] },
         { key_code: '5', modifiers: ['shift'] },
       ],
-    },
-  }}),
-  ...superShortcut({ keys: ['j', 'x'], out: 'x', special: {
-    VSCode: {
-      to: [{ key_code: 'p', modifiers: ['command', 'left_shift'] }],
-    },
-    reaper: {
-      to: [{ key_code: 'slash', modifiers: ['left_shift', 'option'] }],
     },
   }}),
   ...superShortcut({ keys: ['j', 'd'], out: 'd', special: {

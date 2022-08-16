@@ -748,6 +748,170 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "J + X -> Command palette in VSCode",
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "VSCode"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "x"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "p",
+                    "modifiers": [
+                      "command",
+                      "left_shift"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "J + X -> Action list in reaper",
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "REAPER"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "x"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "slash",
+                    "modifiers": [
+                      "left_shift",
+                      "option"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "J + X -> M-x in Emacs",
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "Emacs"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "x"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "x",
+                    "modifiers": [
+                      "option"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "J + X -> Help search",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "x"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "slash",
+                    "modifiers": [
+                      "command",
+                      "shift"
+                    ]
+                  }
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "J + K -> escape",
                 "from": {
                   "simultaneous": [
@@ -898,138 +1062,6 @@
                     "key_code": "5",
                     "modifiers": [
                       "shift"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "j + x -> Super Shortcut",
-                "from": {
-                  "simultaneous": [
-                    {
-                      "key_code": "j"
-                    },
-                    {
-                      "key_code": "x"
-                    }
-                  ],
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  },
-                  "simultaneous_options": {
-                    "key_down_order": "insensitive"
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "x",
-                    "modifiers": [
-                      "command",
-                      "control",
-                      "option",
-                      "left_shift"
-                    ]
-                  }
-                ],
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "VSCode",
-                      "reaper"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "j + x -> Super Shortcut (VSCode)",
-                "from": {
-                  "simultaneous": [
-                    {
-                      "key_code": "j"
-                    },
-                    {
-                      "key_code": "x"
-                    }
-                  ],
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  },
-                  "simultaneous_options": {
-                    "key_down_order": "insensitive"
-                  }
-                },
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "VSCode"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "to": [
-                  {
-                    "key_code": "p",
-                    "modifiers": [
-                      "command",
-                      "left_shift"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "j + x -> Super Shortcut (reaper)",
-                "from": {
-                  "simultaneous": [
-                    {
-                      "key_code": "j"
-                    },
-                    {
-                      "key_code": "x"
-                    }
-                  ],
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  },
-                  "simultaneous_options": {
-                    "key_down_order": "insensitive"
-                  }
-                },
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "reaper"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "to": [
-                  {
-                    "key_code": "slash",
-                    "modifiers": [
-                      "left_shift",
-                      "option"
                     ]
                   }
                 ]
