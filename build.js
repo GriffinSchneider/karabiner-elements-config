@@ -362,18 +362,17 @@ const defaultProfileManipulators = [
   ...superShortcut({ keys: ['j', '2'], out: '2' }),
   ...superShortcut({ keys: ['j', '3'], out: '3' }),
   ...superShortcut({ keys: ['j', '4'], out: '4' }),
-
-  ...superShortcut({ keys: ['k', 'o'], out: '0', special: {
-    firefox: {
-      to: [{ key_code: 'w', modifiers: ['command'] }],
+  
+  manipulator({
+    description: 'K + O -> Cmd-w',
+    parameters: {
+       'basic.simultaneous_threshold_milliseconds': 80,
     },
-    VSCode: {
-      to: [{ key_code: 'w', modifiers: ['command'] }],
+    from: {
+      simultaneous: [{ key_code: 'k' }, { key_code: 'o' }],
     },
-    iterm: {
-      to: [{ key_code: 'w', modifiers: ['command'] }],
-    },
-  }}),
+    to: [{ key_code: 'w', modifiers: ['command'] }],
+  }),
   manipulator({
     description: 'K + O + Q -> Cmd-Q',
     parameters: {

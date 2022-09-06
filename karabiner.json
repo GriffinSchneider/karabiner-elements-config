@@ -2056,7 +2056,10 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "k + o -> Super Shortcut",
+                "description": "K + O -> Cmd-w",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 80
+                },
                 "from": {
                   "simultaneous": [
                     {
@@ -2075,61 +2078,6 @@
                     "key_down_order": "insensitive"
                   }
                 },
-                "to": [
-                  {
-                    "key_code": "0",
-                    "modifiers": [
-                      "command",
-                      "control",
-                      "option",
-                      "left_shift"
-                    ]
-                  }
-                ],
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "firefox",
-                      "VSCode",
-                      "iterm"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "k + o -> Super Shortcut (firefox)",
-                "from": {
-                  "simultaneous": [
-                    {
-                      "key_code": "k"
-                    },
-                    {
-                      "key_code": "o"
-                    }
-                  ],
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  },
-                  "simultaneous_options": {
-                    "key_down_order": "insensitive"
-                  }
-                },
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "firefox"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
                 "to": [
                   {
                     "key_code": "w",
@@ -2137,91 +2085,8 @@
                       "command"
                     ]
                   }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "k + o -> Super Shortcut (VSCode)",
-                "from": {
-                  "simultaneous": [
-                    {
-                      "key_code": "k"
-                    },
-                    {
-                      "key_code": "o"
-                    }
-                  ],
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  },
-                  "simultaneous_options": {
-                    "key_down_order": "insensitive"
-                  }
-                },
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "VSCode"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
                 ],
-                "to": [
-                  {
-                    "key_code": "w",
-                    "modifiers": [
-                      "command"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "k + o -> Super Shortcut (iterm)",
-                "from": {
-                  "simultaneous": [
-                    {
-                      "key_code": "k"
-                    },
-                    {
-                      "key_code": "o"
-                    }
-                  ],
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  },
-                  "simultaneous_options": {
-                    "key_down_order": "insensitive"
-                  }
-                },
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "iterm"
-                    ],
-                    "type": "frontmost_application_if"
-                  }
-                ],
-                "to": [
-                  {
-                    "key_code": "w",
-                    "modifiers": [
-                      "command"
-                    ]
-                  }
-                ]
+                "conditions": []
               }
             ]
           },
