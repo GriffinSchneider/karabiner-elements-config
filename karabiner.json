@@ -795,7 +795,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "REAPER"
+                      "reaper"
                     ],
                     "type": "frontmost_application_if"
                   }

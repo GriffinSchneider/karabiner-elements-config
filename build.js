@@ -261,7 +261,7 @@ const defaultProfileManipulators = [
   }),
   manipulator({
     description: 'J + X -> Action list in reaper',
-    conditions: [{ bundle_identifiers: ['REAPER'], type: 'frontmost_application_if' }],
+    conditions: [{ bundle_identifiers: ['reaper'], type: 'frontmost_application_if' }],
     from: {
       simultaneous: [{ key_code: 'j' }, { key_code: 'x' }],
     },
