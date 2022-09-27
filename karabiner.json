@@ -678,7 +678,8 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "Emacs"
+                      "Emacs",
+                      "firefox"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -686,9 +687,7 @@
                 "from": {
                   "key_code": "j",
                   "modifiers": {
-                    "optional": [
-                      "any"
-                    ],
+                    "optional": [],
                     "mandatory": [
                       "option"
                     ]
@@ -715,7 +714,8 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "Emacs"
+                      "Emacs",
+                      "firefox"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -723,9 +723,7 @@
                 "from": {
                   "key_code": "k",
                   "modifiers": {
-                    "optional": [
-                      "any"
-                    ],
+                    "optional": [],
                     "mandatory": [
                       "option"
                     ]

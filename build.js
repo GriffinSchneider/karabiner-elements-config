@@ -240,14 +240,14 @@ const defaultProfileManipulators = [
   }),
   manipulator({
     description: 'Alt-J -> Next tab',
-    conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
-    from: { key_code: 'j', modifiers: {mandatory: ['option'] } },
+    conditions: [{ bundle_identifiers: ['Emacs', 'firefox'], type: 'frontmost_application_unless' }],
+    from: { key_code: 'j', modifiers: { mandatory: ['option'], optional: [] } },
     to: { key_code: 'tab', modifiers: ['control'], repeat: true },
   }),
   manipulator({
     description: 'Alt-K -> Previous tab',
-    conditions: [{ bundle_identifiers: ['Emacs'], type: 'frontmost_application_unless' }],
-    from: { key_code: 'k', modifiers: {mandatory: ['option'] } },
+    conditions: [{ bundle_identifiers: ['Emacs', 'firefox'], type: 'frontmost_application_unless' }],
+    from: { key_code: 'k', modifiers: { mandatory: ['option'], optional: [] } },
     to: { key_code: 'tab', modifiers: ['control', 'shift'], repeat: true },
   }),
 
