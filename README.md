@@ -1,5 +1,5 @@
 # karabiner-elements-config
-`node build.js` creates `karabiner.json`
+Clone this repo into `~/.config/karabiner`. `node build.js` creates `karabiner.json`, the actual Karabiner config file.
 
 ---
 
