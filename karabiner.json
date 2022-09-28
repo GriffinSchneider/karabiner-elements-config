@@ -747,6 +747,41 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "Alt-; -> Alt-L in FireFox",
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "firefox"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "key_code": "semicolon",
+                  "modifiers": {
+                    "optional": [],
+                    "mandatory": [
+                      "option"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": {
+                  "key_code": "l",
+                  "modifiers": [
+                    "option"
+                  ],
+                  "repeat": true
+                }
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "J + X -> Command palette in VSCode",
                 "conditions": [
                   {

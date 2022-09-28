@@ -250,6 +250,15 @@ const defaultProfileManipulators = [
     from: { key_code: 'k', modifiers: { mandatory: ['option'], optional: [] } },
     to: { key_code: 'tab', modifiers: ['control', 'shift'], repeat: true },
   }),
+  // I want to use Alt-; to toggle trees in Tree Style Tab, but Firefox's "Manage Extension Shortcuts"
+  // only lets you map shortcuts with letters in them, so redirect it to Alt-L.
+  manipulator({
+    description: 'Alt-; -> Alt-L in FireFox',
+    conditions: [{ bundle_identifiers: ['firefox'], type: 'frontmost_application_if' }],
+    from: { key_code: 'semicolon', modifiers: { mandatory: ['option'], optional: [] } },
+    to: { key_code: 'l', modifiers: ['option'], repeat: true },
+  }),
+
 
   manipulator({
     description: 'J + X -> Command palette in VSCode',
