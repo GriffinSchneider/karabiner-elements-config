@@ -373,12 +373,12 @@ const defaultProfileManipulators = [
   ...superShortcut({ keys: ['j', '4'], out: '4' }),
   
   manipulator({
-    description: 'K + O -> Cmd-w',
+    description: ', + . -> Cmd-w',
     parameters: {
        'basic.simultaneous_threshold_milliseconds': 80,
     },
     from: {
-      simultaneous: [{ key_code: 'k' }, { key_code: 'o' }],
+      simultaneous: [{ key_code: 'comma' }, { key_code: 'period' }],
     },
     to: [{ key_code: 'w', modifiers: ['command'] }],
   }),
