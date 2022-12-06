@@ -259,6 +259,22 @@ const defaultProfileManipulators = [
     to: { key_code: 'l', modifiers: ['option'], repeat: true },
   }),
 
+  // Alt-j and Alt-k are passed through directly to Firefox, and Tree Style Tab is configured to use them
+  // for its linear tab switching. In Firefox, the 'Ctrl+Tab cycles through tabs in recently used order'
+  // preference is turned on, so I can use Ctrl-O/Ctrl-I to navigate through recently-used tabs, like Vim's
+  // jump list.
+  manipulator({
+    description: 'FireFox Ctrl+O MRU tab switch',
+    from: { key_code: 'o', modifiers: {mandatory: ['control'] } },
+    to: [{ key_code: 'tab', modifiers: ['control'] }],
+    conditions: [{ bundle_identifiers: ['firefox'], type: 'frontmost_application_if' }],
+  }),
+  manipulator({
+    description: 'FireFox Ctrl+I MRU tab switch',
+    from: { key_code: 'i', modifiers: {mandatory: ['control'] } },
+    to: [{ key_code: 'tab', modifiers: ['control', 'shift'] }],
+    conditions: [{ bundle_identifiers: ['firefox'], type: 'frontmost_application_if' }],
+  }),
 
   manipulator({
     description: 'J + X -> Command palette in VSCode',
