@@ -2573,6 +2573,42 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": ". + / -> Homerow.app",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "period"
+                    },
+                    {
+                      "key_code": "slash"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "spacebar",
+                    "modifiers": [
+                      "command",
+                      "shift"
+                    ]
+                  }
+                ],
+                "conditions": []
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "Semicolon + f -> FireFox Developer Edition",
                 "from": {
                   "simultaneous": [

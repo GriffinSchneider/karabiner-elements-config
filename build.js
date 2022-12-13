@@ -558,6 +558,14 @@ const defaultProfileManipulators = [
     conditions: [{ bundle_identifiers: ['VSCode'], type: 'frontmost_application_if' }],
   }),
 
+  manipulator({ global: true}, {
+    description: '. + / -> Homerow.app',
+    from: {
+      simultaneous: [{ key_code: 'period' }, { key_code: 'slash' }],
+    },
+    to: [{ key_code: 'spacebar', modifiers: ['command', 'shift' ] }],
+  }),
+
   ...pickApp({ k: 'f', app: 'FireFox Developer Edition', bundleId: 'firefox' }),
   ...pickApp({ k: 'c', app: 'Google Chrome', bundleId: 'Chrome' }),
   // ...pickApp({ k: 'e', app: '/System/Volumes/Data/usr/local/Cellar/emacs-plus@27/HEAD-29708cb/Emacs', bundleId: 'Emacs' }),
