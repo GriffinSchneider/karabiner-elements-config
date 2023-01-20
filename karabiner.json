@@ -1389,7 +1389,8 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "firefox"
+                      "firefox",
+                      "finder"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -1433,6 +1434,49 @@
                     "key_code": "l",
                     "modifiers": [
                       "command"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "j + f -> Super Shortcut (finder)",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "f"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "finder"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "g",
+                    "modifiers": [
+                      "command",
+                      "shift"
                     ]
                   }
                 ]

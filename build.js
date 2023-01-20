@@ -347,6 +347,9 @@ const defaultProfileManipulators = [
     firefox: {
       to: [{ key_code: 'l', modifiers: ['command'] }],
     },
+    finder: {
+      to: [{ key_code: 'g', modifiers: ['command', 'shift'] }],
+    },
   }}),
   ...superShortcut({ keys: ['j', 'a'], out: 'a', special: {
     VSCode: {
