@@ -1390,6 +1390,7 @@
                   {
                     "bundle_identifiers": [
                       "firefox",
+                      "Chrome",
                       "finder"
                     ],
                     "type": "frontmost_application_unless"
@@ -1425,6 +1426,48 @@
                   {
                     "bundle_identifiers": [
                       "firefox"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "l",
+                    "modifiers": [
+                      "command"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "j + f -> Super Shortcut (Chrome)",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "f"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "Chrome"
                     ],
                     "type": "frontmost_application_if"
                   }
