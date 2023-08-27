@@ -421,6 +421,12 @@ const defaultProfileManipulators = [
     to: [{ key_code: 'f1' }],
     conditions: [{ bundle_identifiers: ['firefox'], type: 'frontmost_application_if' }],
   }),
+  manipulator({
+    description: 'Finder Cmd+B Sidebar',
+    from: { key_code: 'b', modifiers: {mandatory: ['command'] } },
+    to: [{ key_code: 's', modifiers: ['command','control'] }],
+    conditions: [{ bundle_identifiers: ['finder'], type: 'frontmost_application_if' }],
+  }),
 
   ...superShortcut({ keys: ['l', 'semicolon'], out: 'l'}),
 
