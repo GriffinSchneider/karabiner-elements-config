@@ -594,6 +594,7 @@ const defaultProfileManipulators = [
   ...pickApp({ k: 'g', app: 'Messages', bundleId: 'iChat' }),
   ...pickApp({ k: 'x', app: 'Totalmix', bundleId: 'de.rme-audio.TotalmixFX' }),
   ...pickApp({ k: 'u', app: 'Swinsian', bundleId: 'com.swinsian.Swinsian' }),
+  ...pickApp({ k: 'w', app: 'Weather', bundleId: 'Weather' }),
 ];
 
 
