@@ -368,7 +368,11 @@ const defaultProfileManipulators = [
       to: [{ key_code: 'escape' }, { key_code: 'escape' }, { key_code: 'f6' }],
     },
     iterm: {
-      to: [{ key_code: 'k', modifiers: ['command'] }],
+      // Clear the screen/scrollback. Then add a Ctrl-L to work around a bug where, when I connect
+      // via SSH into a fish terminal inside WSL on my Windows machine, clearing the screen causes
+      // the UI to get corrupted - the cursor jumps around, text appears in the wrong place, etc.
+      // Pressing Ctrl-L after clearing restores normal behavior.
+      to: [{ key_code: 'k', modifiers: ['command'] }, { key_code: 'l', modifiers: ['control'] }],
     },
     reaper: {
       to: [{ key_code: 'k', modifiers: ['command'] }],
