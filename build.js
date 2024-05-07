@@ -240,13 +240,13 @@ const defaultProfileManipulators = [
   }),
   manipulator({
     description: 'Alt-J -> Next tab',
-    conditions: [{ bundle_identifiers: ['Emacs', 'firefox'], type: 'frontmost_application_unless' }],
+    conditions: [{ bundle_identifiers: ['Emacs', 'firefox', 'VSCode'], type: 'frontmost_application_unless' }],
     from: { key_code: 'j', modifiers: { mandatory: ['option'], optional: [] } },
     to: { key_code: 'tab', modifiers: ['control'], repeat: true },
   }),
   manipulator({
     description: 'Alt-K -> Previous tab',
-    conditions: [{ bundle_identifiers: ['Emacs', 'firefox'], type: 'frontmost_application_unless' }],
+    conditions: [{ bundle_identifiers: ['Emacs', 'firefox', 'VSCode'], type: 'frontmost_application_unless' }],
     from: { key_code: 'k', modifiers: { mandatory: ['option'], optional: [] } },
     to: { key_code: 'tab', modifiers: ['control', 'shift'], repeat: true },
   }),
@@ -264,16 +264,34 @@ const defaultProfileManipulators = [
   // preference is turned on, so I can use Ctrl-O/Ctrl-I to navigate through recently-used tabs, like Vim's
   // jump list.
   manipulator({
-    description: 'FireFox Ctrl+O MRU tab switch',
+    description: 'FireFox Ctrl-O MRU tab switch',
     from: { key_code: 'o', modifiers: {mandatory: ['control'] } },
     to: [{ key_code: 'tab', modifiers: ['control'] }],
-    conditions: [{ bundle_identifiers: ['firefox'], type: 'frontmost_application_if' }],
+    conditions: [{ bundle_identifiers: ['firefox', 'VSCode'], type: 'frontmost_application_if' }],
   }),
   manipulator({
-    description: 'FireFox Ctrl+I MRU tab switch',
+    description: 'FireFox Ctrl-I MRU tab switch',
     from: { key_code: 'i', modifiers: {mandatory: ['control'] } },
     to: [{ key_code: 'tab', modifiers: ['control', 'shift'] }],
-    conditions: [{ bundle_identifiers: ['firefox'], type: 'frontmost_application_if' }],
+    conditions: [{ bundle_identifiers: ['firefox', 'VSCode'], type: 'frontmost_application_if' }],
+  }),
+  manipulator({
+    description: 'FireFox Ctrl-O + ; -> Ctrl-O',
+    from: {
+      simultaneous: [{ key_code: 'o' }, { key_code: 'semicolon'}],
+      modifiers: { mandatory: ['control'] },
+    },
+    to: [{ key_code: 'o', modifiers: ['control'] }],
+    conditions: [{ bundle_identifiers: ['firefox', 'VSCode'], type: 'frontmost_application_if' }],
+  }),
+  manipulator({
+    description: 'FireFox Ctrl-I + ; -> Ctrl-I',
+    from: {
+      simultaneous: [{ key_code: 'i' }, { key_code: 'semicolon'}],
+      modifiers: { mandatory: ['control'] },
+    },
+    to: [{ key_code: 'i', modifiers: ['control'] }],
+    conditions: [{ bundle_identifiers: ['firefox', 'VSCode'], type: 'frontmost_application_if' }],
   }),
 
   manipulator({

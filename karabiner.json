@@ -680,7 +680,8 @@
                   {
                     "bundle_identifiers": [
                       "Emacs",
-                      "firefox"
+                      "firefox",
+                      "VSCode"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -716,7 +717,8 @@
                   {
                     "bundle_identifiers": [
                       "Emacs",
-                      "firefox"
+                      "firefox",
+                      "VSCode"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -783,7 +785,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "FireFox Ctrl+O MRU tab switch",
+                "description": "FireFox Ctrl-O MRU tab switch",
                 "from": {
                   "key_code": "o",
                   "modifiers": {
@@ -809,7 +811,8 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "firefox"
+                      "firefox",
+                      "VSCode"
                     ],
                     "type": "frontmost_application_if"
                   }
@@ -821,7 +824,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "FireFox Ctrl+I MRU tab switch",
+                "description": "FireFox Ctrl-I MRU tab switch",
                 "from": {
                   "key_code": "i",
                   "modifiers": {
@@ -848,7 +851,100 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "firefox"
+                      "firefox",
+                      "VSCode"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "FireFox Ctrl-O + ; -> Ctrl-O",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "semicolon"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ],
+                    "mandatory": [
+                      "control"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "o",
+                    "modifiers": [
+                      "control"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "firefox",
+                      "VSCode"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "FireFox Ctrl-I + ; -> Ctrl-I",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "i"
+                    },
+                    {
+                      "key_code": "semicolon"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ],
+                    "mandatory": [
+                      "control"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "i",
+                    "modifiers": [
+                      "control"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "firefox",
+                      "VSCode"
                     ],
                     "type": "frontmost_application_if"
                   }
