@@ -348,6 +348,9 @@ const defaultProfileManipulators = [
         { key_code: '5', modifiers: ['shift'] },
       ],
     },
+    reaper: {
+      to: [{ key_code: 'm', modifiers: ['command', 'shift'] }],
+    },
   }}),
   ...superShortcut({ keys: ['j', 'd'], out: 'd', special: {
     VSCode: {
