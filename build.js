@@ -379,11 +379,11 @@ const defaultProfileManipulators = [
   }}),
   ...superShortcut({ keys: ['j', 'l'], out: 'l', special: {
     VSCode: {
-      to: [{ key_code: 'f12' }],
+      to: [{ key_code: 'f12', modifiers: ['fn'] }],
     },
     firefox: {
       // If the address bar is selected, reset it and re-select the browser content.
-      to: [{ key_code: 'escape' }, { key_code: 'escape' }, { key_code: 'f6' }],
+      to: [{ key_code: 'escape' }, { key_code: 'escape' }, { key_code: 'f6', modifiers: ['fn'] }],
     },
     iterm: {
       // Clear the screen/scrollback. Then add a Ctrl-L to work around a bug where, when I connect
@@ -404,7 +404,7 @@ const defaultProfileManipulators = [
   ...superShortcut({ keys: ['j', 'g'], out: 'g' }),
   ...superShortcut({ keys: ['j', 'semicolon'], out: 'semicolon', special: {
     VSCode: {
-      to: [{ key_code: 'f12', 'modifiers': ['left_shift'] }],
+      to: [{ key_code: 'f12', 'modifiers': ['fn', 'left_shift'] }],
     },
   }}),
   ...superShortcut({ keys: ['j', '1'], out: '1' , special: {
@@ -440,7 +440,7 @@ const defaultProfileManipulators = [
   manipulator({
     description: 'FireFox Cmd+B Sidebar',
     from: { key_code: 'b', modifiers: {mandatory: ['command'] } },
-    to: [{ key_code: 'f1' }],
+    to: [{ key_code: 'f1', modifiers: ['fn'] }],
     conditions: [{ bundle_identifiers: ['firefox'], type: 'frontmost_application_if' }],
   }),
   manipulator({
@@ -549,8 +549,8 @@ const defaultProfileManipulators = [
       // { key_code: 'quote', modifiers:  [] },
       // { key_code: 'return', modifiers: [] },
       // { shell_command: `echo`, hold_down_milliseconds: 500 },
-      // { key_code: 'f4', modifiers: [], },
-      // { key_code: 'f12', modifiers: [], },
+      // { key_code: 'f4', modifiers: ['fn'], },
+      // { key_code: 'f12', modifiers: ['fn'], },
       // { key_code: 'f', modifiers: ['command', 'option', 'control', 'shift'] },
       // { key_code: 'o', modifiers: ['control'] },
       // { key_code: 'f', modifiers: ['command', 'option', 'control', 'shift'] },
@@ -580,7 +580,7 @@ const defaultProfileManipulators = [
     from: {
       simultaneous: [{ key_code: 'open_bracket' }, { key_code: 'close_bracket' }],
     },
-    to: [{ key_code: 'f2', modifiers: ['control'] }],
+    to: [{ key_code: 'f2', modifiers: ['fn', 'control'] }],
   }),
   manipulator({ global: true }, {
     description: 'cmd + [ + ] -> Toggle status bar in VSCode',
