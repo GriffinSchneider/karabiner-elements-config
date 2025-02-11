@@ -6,6 +6,8 @@ const fs = require('fs');
 const path = require('path');
 
 
+const cursorBundleId = 'com.todesktop.230313mzl4w4u92';
+
 const manipulator = (opts, obj) => {
   if (!obj) {
     obj = opts;
@@ -173,7 +175,7 @@ const defaultProfileManipulators = [
   }),
   manipulator({
     description: 'Cmd-H -> left',
-    conditions: [{ bundle_identifiers: ['Emacs', 'VSCode'], type: 'frontmost_application_unless' }],
+    conditions: [{ bundle_identifiers: ['Emacs', 'VSCode', cursorBundleId], type: 'frontmost_application_unless' }],
     from: { key_code: 'h', modifiers: { mandatory: ['command'], optional: ['option', 'shift'] } },
     to: { key_code: 'left_arrow', repeat: true },
   }),
@@ -200,7 +202,7 @@ const defaultProfileManipulators = [
   }),
   manipulator({
     description: 'Cmd-L -> right',
-    conditions: [{ bundle_identifiers: ['Emacs', 'VSCode'], type: 'frontmost_application_unless' }],
+    conditions: [{ bundle_identifiers: ['Emacs', 'VSCode', cursorBundleId], type: 'frontmost_application_unless' }],
     from: { key_code: 'l', modifiers: { mandatory: ['command'], optional: ['option', 'shift'] } },
     to: { key_code: 'right_arrow', repeat: true },
   }),
@@ -240,13 +242,13 @@ const defaultProfileManipulators = [
   }),
   manipulator({
     description: 'Alt-J -> Next tab',
-    conditions: [{ bundle_identifiers: ['Emacs', 'firefox', 'VSCode'], type: 'frontmost_application_unless' }],
+    conditions: [{ bundle_identifiers: ['Emacs', 'firefox', 'VSCode', cursorBundleId], type: 'frontmost_application_unless' }],
     from: { key_code: 'j', modifiers: { mandatory: ['option'], optional: [] } },
     to: { key_code: 'tab', modifiers: ['control'], repeat: true },
   }),
   manipulator({
     description: 'Alt-K -> Previous tab',
-    conditions: [{ bundle_identifiers: ['Emacs', 'firefox', 'VSCode'], type: 'frontmost_application_unless' }],
+    conditions: [{ bundle_identifiers: ['Emacs', 'firefox', 'VSCode', cursorBundleId], type: 'frontmost_application_unless' }],
     from: { key_code: 'k', modifiers: { mandatory: ['option'], optional: [] } },
     to: { key_code: 'tab', modifiers: ['control', 'shift'], repeat: true },
   }),
@@ -267,13 +269,13 @@ const defaultProfileManipulators = [
     description: 'FireFox Ctrl-O MRU tab switch',
     from: { key_code: 'o', modifiers: {mandatory: ['control'] } },
     to: [{ key_code: 'tab', modifiers: ['control'] }],
-    conditions: [{ bundle_identifiers: ['firefox', 'VSCode'], type: 'frontmost_application_if' }],
+    conditions: [{ bundle_identifiers: ['firefox', 'VSCode', cursorBundleId], type: 'frontmost_application_if' }],
   }),
   manipulator({
     description: 'FireFox Ctrl-I MRU tab switch',
     from: { key_code: 'i', modifiers: {mandatory: ['control'] } },
     to: [{ key_code: 'tab', modifiers: ['control', 'shift'] }],
-    conditions: [{ bundle_identifiers: ['firefox', 'VSCode'], type: 'frontmost_application_if' }],
+    conditions: [{ bundle_identifiers: ['firefox', 'VSCode', cursorBundleId], type: 'frontmost_application_if' }],
   }),
   manipulator({
     description: 'FireFox Ctrl-O + ; -> Ctrl-O',
@@ -282,7 +284,7 @@ const defaultProfileManipulators = [
       modifiers: { mandatory: ['control'] },
     },
     to: [{ key_code: 'o', modifiers: ['control'] }],
-    conditions: [{ bundle_identifiers: ['firefox', 'VSCode'], type: 'frontmost_application_if' }],
+    conditions: [{ bundle_identifiers: ['firefox', 'VSCode', cursorBundleId], type: 'frontmost_application_if' }],
   }),
   manipulator({
     description: 'FireFox Ctrl-I + ; -> Ctrl-I',
@@ -291,12 +293,12 @@ const defaultProfileManipulators = [
       modifiers: { mandatory: ['control'] },
     },
     to: [{ key_code: 'i', modifiers: ['control'] }],
-    conditions: [{ bundle_identifiers: ['firefox', 'VSCode'], type: 'frontmost_application_if' }],
+    conditions: [{ bundle_identifiers: ['firefox', 'VSCode', cursorBundleId], type: 'frontmost_application_if' }],
   }),
 
   manipulator({
     description: 'J + X -> Command palette in VSCode',
-    conditions: [{ bundle_identifiers: ['VSCode'], type: 'frontmost_application_if' }],
+    conditions: [{ bundle_identifiers: ['VSCode', cursorBundleId], type: 'frontmost_application_if' }],
     from: {
       simultaneous: [{ key_code: 'j' }, { key_code: 'x' }],
     },
@@ -356,6 +358,9 @@ const defaultProfileManipulators = [
     VSCode: {
       to: [{ key_code: 'p', modifiers: ['command'] }],
     },
+    [cursorBundleId]: {
+      to: [{ key_code: 'p', modifiers: ['command'] }],
+    },
     Postico: {
       to: [{ key_code: 'p', modifiers: ['command'] }],
     },
@@ -378,10 +383,16 @@ const defaultProfileManipulators = [
   ...superShortcut({ keys: ['j', 'a'], out: 'a', special: {
     VSCode: {
       to: [{ key_code: 'f', modifiers: ['command', 'shift'] }],
-    }
+    },
+    [cursorBundleId]: {
+      to: [{ key_code: 'f', modifiers: ['command', 'shift'] }],
+    },
   }}),
   ...superShortcut({ keys: ['j', 'l'], out: 'l', special: {
     VSCode: {
+      to: [{ key_code: 'f12', modifiers: ['fn'] }],
+    },
+    [cursorBundleId]: {
       to: [{ key_code: 'f12', modifiers: ['fn'] }],
     },
     firefox: {
@@ -391,7 +402,7 @@ const defaultProfileManipulators = [
     iterm: {
       // Clear the screen/scrollback. Then add a Ctrl-L to work around a bug where, when I connect
       // via SSH into a fish terminal inside WSL on my Windows machine, clearing the screen causes
-      // the UI to get corrupted - the cursor jumps around, text appears in the wrong place, etc.
+      // the UI to get corrupted - the cur jumps around, text appears in the wrong place, etc.
       // Pressing Ctrl-L after clearing restores normal behavior.
       to: [{ key_code: 'k', modifiers: ['command'] }, { key_code: 'l', modifiers: ['control'] }],
     },
@@ -403,15 +414,24 @@ const defaultProfileManipulators = [
     VSCode: {
       to: [{ key_code: 'k', modifiers: ['command'] }, { key_code: 'i', modifiers: ['command'] }],
     },
+    [cursorBundleId]: {
+      to: [{ key_code: 'k', modifiers: ['command'] }, { key_code: 'i', modifiers: ['command'] }],
+    },
   }}),
   ...superShortcut({ keys: ['j', 'g'], out: 'g' }),
   ...superShortcut({ keys: ['j', 'semicolon'], out: 'semicolon', special: {
     VSCode: {
       to: [{ key_code: 'f12', 'modifiers': ['fn', 'left_shift'] }],
     },
+    [cursorBundleId]: {
+      to: [{ key_code: 'f12', 'modifiers': ['fn', 'left_shift'] }],
+    },
   }}),
   ...superShortcut({ keys: ['j', '1'], out: '1' , special: {
     VSCode: {
+      to: [{ key_code: 't', modifiers: ['command', 'option'] }],
+    },
+    [cursorBundleId]: {
       to: [{ key_code: 't', modifiers: ['command', 'option'] }],
     }
   }}),
@@ -592,7 +612,7 @@ const defaultProfileManipulators = [
       modifiers: { mandatory: ['command'] },
     },
     to: [{ key_code: 'close_bracket', modifiers: ['control', 'option', 'command'] }],
-    conditions: [{ bundle_identifiers: ['VSCode'], type: 'frontmost_application_if' }],
+    conditions: [{ bundle_identifiers: ['VSCode', cursorBundleId], type: 'frontmost_application_if' }],
   }),
 
   manipulator({ global: true}, {

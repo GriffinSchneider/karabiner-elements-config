@@ -351,7 +351,8 @@
                   {
                     "bundle_identifiers": [
                       "Emacs",
-                      "VSCode"
+                      "VSCode",
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -473,7 +474,8 @@
                   {
                     "bundle_identifiers": [
                       "Emacs",
-                      "VSCode"
+                      "VSCode",
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -674,7 +676,8 @@
                     "bundle_identifiers": [
                       "Emacs",
                       "firefox",
-                      "VSCode"
+                      "VSCode",
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -711,7 +714,8 @@
                     "bundle_identifiers": [
                       "Emacs",
                       "firefox",
-                      "VSCode"
+                      "VSCode",
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -805,7 +809,8 @@
                   {
                     "bundle_identifiers": [
                       "firefox",
-                      "VSCode"
+                      "VSCode",
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_if"
                   }
@@ -845,7 +850,8 @@
                   {
                     "bundle_identifiers": [
                       "firefox",
-                      "VSCode"
+                      "VSCode",
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_if"
                   }
@@ -891,7 +897,8 @@
                   {
                     "bundle_identifiers": [
                       "firefox",
-                      "VSCode"
+                      "VSCode",
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_if"
                   }
@@ -937,7 +944,8 @@
                   {
                     "bundle_identifiers": [
                       "firefox",
-                      "VSCode"
+                      "VSCode",
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_if"
                   }
@@ -953,7 +961,8 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "VSCode"
+                      "VSCode",
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_if"
                   }
@@ -1351,6 +1360,7 @@
                   {
                     "bundle_identifiers": [
                       "VSCode",
+                      "com.todesktop.230313mzl4w4u92",
                       "Postico",
                       "firefox"
                     ],
@@ -1387,6 +1397,48 @@
                   {
                     "bundle_identifiers": [
                       "VSCode"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "p",
+                    "modifiers": [
+                      "command"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "j + d -> Super Shortcut (com.todesktop.230313mzl4w4u92)",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "d"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_if"
                   }
@@ -1697,7 +1749,8 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "VSCode"
+                      "VSCode",
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -1752,6 +1805,49 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "j + a -> Super Shortcut (com.todesktop.230313mzl4w4u92)",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "a"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "com.todesktop.230313mzl4w4u92"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "f",
+                    "modifiers": [
+                      "command",
+                      "shift"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "j + l -> Super Shortcut",
                 "from": {
                   "simultaneous": [
@@ -1786,6 +1882,7 @@
                   {
                     "bundle_identifiers": [
                       "VSCode",
+                      "com.todesktop.230313mzl4w4u92",
                       "firefox",
                       "iterm",
                       "reaper"
@@ -1823,6 +1920,48 @@
                   {
                     "bundle_identifiers": [
                       "VSCode"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "f12",
+                    "modifiers": [
+                      "fn"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "j + l -> Super Shortcut (com.todesktop.230313mzl4w4u92)",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "l"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_if"
                   }
@@ -2013,7 +2152,8 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "VSCode"
+                      "VSCode",
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -2048,6 +2188,54 @@
                   {
                     "bundle_identifiers": [
                       "VSCode"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "k",
+                    "modifiers": [
+                      "command"
+                    ]
+                  },
+                  {
+                    "key_code": "i",
+                    "modifiers": [
+                      "command"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "l + semicolon -> Super Shortcut (com.todesktop.230313mzl4w4u92)",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "l"
+                    },
+                    {
+                      "key_code": "semicolon"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_if"
                   }
@@ -2144,7 +2332,8 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "VSCode"
+                      "VSCode",
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -2199,6 +2388,49 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "j + semicolon -> Super Shortcut (com.todesktop.230313mzl4w4u92)",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "semicolon"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "com.todesktop.230313mzl4w4u92"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "f12",
+                    "modifiers": [
+                      "fn",
+                      "left_shift"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "j + 1 -> Super Shortcut",
                 "from": {
                   "simultaneous": [
@@ -2232,7 +2464,8 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "VSCode"
+                      "VSCode",
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -2267,6 +2500,49 @@
                   {
                     "bundle_identifiers": [
                       "VSCode"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "t",
+                    "modifiers": [
+                      "command",
+                      "option"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "j + 1 -> Super Shortcut (com.todesktop.230313mzl4w4u92)",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "1"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_if"
                   }
@@ -2838,7 +3114,8 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "VSCode"
+                      "VSCode",
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_if"
                   }
