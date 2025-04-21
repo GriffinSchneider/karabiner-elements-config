@@ -323,6 +323,14 @@ const defaultProfileManipulators = [
       to: [{ key_code: 'x', modifiers: ['option'] }],
   }),
   manipulator({
+    description: 'J + X -> Command palatte in Blender',
+    conditions: [{ bundle_identifiers: ['blender'], type: 'frontmost_application_if' }],
+    from: {
+      simultaneous: [{ key_code: 'j' }, { key_code: 'x' }],
+    },
+      to: [{ key_code: 'f3', modifiers: ['fn'] }],
+  }),
+  manipulator({
     description: 'J + X -> Help search',
     from: {
       simultaneous: [{ key_code: 'j' }, { key_code: 'x' }],
@@ -652,6 +660,7 @@ const defaultProfileManipulators = [
   ...pickApp({ k: 'x', app: 'Totalmix', bundleId: 'de.rme-audio.TotalmixFX' }),
   ...pickApp({ k: 'u', app: 'Swinsian', bundleId: 'com.swinsian.Swinsian' }),
   ...pickApp({ k: 'w', app: 'Weather', bundleId: 'Weather' }),
+  ...pickApp({ k: 'b', app: 'Blender', bundleId: 'com.blender.Blender' }),
 ];
 
 
