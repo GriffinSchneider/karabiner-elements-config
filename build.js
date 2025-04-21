@@ -559,7 +559,7 @@ const defaultProfileManipulators = [
       { key_code: 'i', modifiers: [] },
       { key_code: 'quote', modifiers: [] },
       { key_code: 'c', modifiers: ['command'] },
-      { shell_command: `/usr/local/bin/code --goto $(/opt/homebrew/bin/ag -Q "registerRoute('$(pbpaste)" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)` },
+      { shell_command: `/usr/local/bin/cursor --goto $(/opt/homebrew/bin/ag -Q "registerRoute('$(pbpaste)" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)` },
       // Alternate way in VSCode with a search editor:
       // { key_code: 'f', modifiers: ['command', 'option', 'control'] },
       // { key_code: 'o', modifiers: ['control'] },
@@ -628,7 +628,7 @@ const defaultProfileManipulators = [
   // ...pickApp({ k: 'e', app: '/System/Volumes/Data/usr/local/Cellar/emacs-plus@27/HEAD-29708cb/Emacs', bundleId: 'Emacs' }),
   ...pickApp({ k: 'e', app: 'Emacs', bundleId: 'Emacs' }),
   ...pickApp({ k: 'i', app: 'ITerm', bundleId: 'iterm2' }),
-  ...pickApp({ k: 'v', app: 'Visual Studio Code', bundleId: 'VSCode' }),
+  ...pickApp({ k: 'v', app: 'Cursor', bundleId: cursorBundleId }),
   ...pickApp({ k: 'o', app: 'Postico 2', bundleId: 'Postico' }),
   ...pickApp({ k: 'p', app: 'Plex', bundleId: 'tv.plex.desktop' }),
   ...pickApp({ k: 'r', app: 'Finder', bundleId: 'Finder' }),
