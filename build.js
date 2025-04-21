@@ -415,7 +415,7 @@ const defaultProfileManipulators = [
       to: [{ key_code: 'k', modifiers: ['command'] }, { key_code: 'i', modifiers: ['command'] }],
     },
     [cursorBundleId]: {
-      to: [{ key_code: 'k', modifiers: ['command'] }, { key_code: 'i', modifiers: ['command'] }],
+      to: [{ key_code: 'r', modifiers: ['command'] }, { key_code: 'i', modifiers: ['command'] }],
     },
   }}),
   ...superShortcut({ keys: ['j', 'g'], out: 'g' }),
@@ -458,6 +458,16 @@ const defaultProfileManipulators = [
       simultaneous: [{ key_code: 'k' }, { key_code: 'o' }, { key_code: 'q' }],
     },
     to: [{ key_code: 'q', modifiers: ['command'] }],
+  }),
+
+  // VSCode's leader key is Cmd+K, but Cursor's is Cmd+R. I want Cmd+R to do debugging stuff everywhere, but I also
+  // have bindings that map to leader key shortcuts (like l+; for hover). So, make Cmd+R into Cmd+R,Cmd+R so that I
+  // can map Cmd+R,Cmd+R to debug stuff in VSCode/Cursor and I don't interfere with Cursor's leader key.
+  manipulator({
+    description: 'VSCode/Cursor Cmd+R -> Cmd+R, Cmd+R',
+    from: { key_code: 'r', modifiers: { mandatory: ['command'] } },
+    to: [{ key_code: 'r', modifiers: ['command'] }, { key_code: 'r', modifiers: ['command'] }],
+    conditions: [{ bundle_identifiers: ['VSCode', cursorBundleId], type: 'frontmost_application_if' }],
   }),
 
   manipulator({
