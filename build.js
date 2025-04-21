@@ -94,30 +94,32 @@ const commonManipulators = [
     to: [{ key_code: 'left_control' }],
     to_if_alone: [{ key_code: 'escape' }],
   }),
+]
+
+const minimalProfileManipulators = [
+  ...commonManipulators,
+
   manipulator({ global: true }, {
-    description: 'Cmd-Ctrl-Opt-Shift-1 -> Select default profile',
-    from: {
-      key_code: '1',
-      modifiers: { mandatory: ['command', 'control', 'option', 'shift'] },
-    },
-    to: [
+    description: 'Tap fn to toggle profiles',
+    from: { key_code: 'fn', modifiers: { optional: ['any'] } },
+    to: [{ key_code: 'fn' }],
+    to_if_alone: [
       { shell_command: `"/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli" --select-profile "Default profile"` },
     ],
   }),
-  manipulator({ global: true }, {
-    description: 'Cmd-Ctrl-Opt-Shift-2 -> Select "Minimal" profile',
-    from: {
-      key_code: '2',
-      modifiers: { mandatory: ['command', 'control', 'option', 'shift'] },
-    },
-    to: [
-      { shell_command: `"/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli" --select-profile "Minimal"` },
-    ],
-  }),
-]
+];
 
 const defaultProfileManipulators = [
   ...commonManipulators,
+
+  manipulator({ global: true }, {
+    description: 'Tap fn to toggle profiles',
+    from: { key_code: 'fn', modifiers: { optional: ['any'] } },
+    to: [{ key_code: 'fn' }],
+    to_if_alone: [
+      { shell_command: `"/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli" --select-profile "Minimal"` },
+    ],
+  }),
 
   manipulator({
     description: 'Cmd-J -> down',
@@ -669,6 +671,6 @@ profile.complex_modifications = {
   rules: defaultProfileManipulators.map(m => ({ manipulators: [m] })),
 };
 
-config.profiles.find(p => p.name === 'Minimal').complex_modifications.rules = commonManipulators.map(m => ({ manipulators: [m] }));
+config.profiles.find(p => p.name === 'Minimal').complex_modifications.rules = minimalProfileManipulators.map(m => ({ manipulators: [m] }));
 
 fs.writeFileSync(configPath, JSON.stringify(config, null, 2));

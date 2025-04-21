@@ -44,18 +44,12 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Cmd-Ctrl-Opt-Shift-1 -> Select default profile",
+                "description": "Tap fn to toggle profiles",
                 "from": {
-                  "key_code": "1",
+                  "key_code": "fn",
                   "modifiers": {
                     "optional": [
                       "any"
-                    ],
-                    "mandatory": [
-                      "command",
-                      "control",
-                      "option",
-                      "shift"
                     ]
                   },
                   "simultaneous_options": {
@@ -64,36 +58,10 @@
                 },
                 "to": [
                   {
-                    "shell_command": "\"/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli\" --select-profile \"Default profile\""
+                    "key_code": "fn"
                   }
                 ],
-                "conditions": []
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Cmd-Ctrl-Opt-Shift-2 -> Select \"Minimal\" profile",
-                "from": {
-                  "key_code": "2",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ],
-                    "mandatory": [
-                      "command",
-                      "control",
-                      "option",
-                      "shift"
-                    ]
-                  },
-                  "simultaneous_options": {
-                    "key_down_order": "insensitive"
-                  }
-                },
-                "to": [
+                "to_if_alone": [
                   {
                     "shell_command": "\"/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli\" --select-profile \"Minimal\""
                   }
@@ -2242,7 +2210,7 @@
                 ],
                 "to": [
                   {
-                    "key_code": "k",
+                    "key_code": "r",
                     "modifiers": [
                       "command"
                     ]
@@ -2756,6 +2724,51 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "VSCode/Cursor Cmd+R -> Cmd+R, Cmd+R",
+                "from": {
+                  "key_code": "r",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ],
+                    "mandatory": [
+                      "command"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "r",
+                    "modifiers": [
+                      "command"
+                    ]
+                  },
+                  {
+                    "key_code": "r",
+                    "modifiers": [
+                      "command"
+                    ]
+                  }
+                ],
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "VSCode",
+                      "com.todesktop.230313mzl4w4u92"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "FireFox Cmd+B Sidebar",
                 "from": {
                   "key_code": "b",
@@ -2955,7 +2968,7 @@
                     ]
                   },
                   {
-                    "shell_command": "/usr/local/bin/code --goto $(/opt/homebrew/bin/ag -Q \"registerRoute('$(pbpaste)\" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)"
+                    "shell_command": "/usr/local/bin/cursor --goto $(/opt/homebrew/bin/ag -Q \"registerRoute('$(pbpaste)\" /Users/griffinschneider/dev/core | tr -d '\n' | cut -d ':' -f 1,2)"
                   }
                 ],
                 "conditions": [
@@ -3487,7 +3500,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + v -> Visual Studio Code",
+                "description": "Semicolon + v -> Cursor",
                 "from": {
                   "simultaneous": [
                     {
@@ -3509,14 +3522,14 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "VSCode"
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_unless"
                   }
                 ],
                 "to": [
                   {
-                    "shell_command": "open -a \"Visual Studio Code.app\""
+                    "shell_command": "open -a \"Cursor.app\""
                   }
                 ]
               }
@@ -3526,7 +3539,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + v in Visual Studio Code -> Cmd+`",
+                "description": "Semicolon + v in Cursor -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -3548,7 +3561,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "VSCode"
+                      "com.todesktop.230313mzl4w4u92"
                     ],
                     "type": "frontmost_application_if"
                   }
@@ -4637,18 +4650,12 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Cmd-Ctrl-Opt-Shift-1 -> Select default profile",
+                "description": "Tap fn to toggle profiles",
                 "from": {
-                  "key_code": "1",
+                  "key_code": "fn",
                   "modifiers": {
                     "optional": [
                       "any"
-                    ],
-                    "mandatory": [
-                      "command",
-                      "control",
-                      "option",
-                      "shift"
                     ]
                   },
                   "simultaneous_options": {
@@ -4657,38 +4664,12 @@
                 },
                 "to": [
                   {
-                    "shell_command": "\"/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli\" --select-profile \"Default profile\""
+                    "key_code": "fn"
                   }
                 ],
-                "conditions": []
-              }
-            ]
-          },
-          {
-            "manipulators": [
-              {
-                "type": "basic",
-                "description": "Cmd-Ctrl-Opt-Shift-2 -> Select \"Minimal\" profile",
-                "from": {
-                  "key_code": "2",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ],
-                    "mandatory": [
-                      "command",
-                      "control",
-                      "option",
-                      "shift"
-                    ]
-                  },
-                  "simultaneous_options": {
-                    "key_down_order": "insensitive"
-                  }
-                },
-                "to": [
+                "to_if_alone": [
                   {
-                    "shell_command": "\"/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli\" --select-profile \"Minimal\""
+                    "shell_command": "\"/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli\" --select-profile \"Default profile\""
                   }
                 ],
                 "conditions": []
