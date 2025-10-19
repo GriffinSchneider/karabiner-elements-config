@@ -475,7 +475,7 @@ const defaultProfileManipulators = [
   // can map Cmd+R,Cmd+R to debug stuff in VSCode/Cursor and I don't interfere with Cursor's leader key.
   manipulator({
     description: 'VSCode/Cursor Cmd+R -> Cmd+R, Cmd+R',
-    from: { key_code: 'r', modifiers: { mandatory: ['command'] } },
+    from: { key_code: 'r', modifiers: { mandatory: ['command'], optional: [] } },
     to: [{ key_code: 'r', modifiers: ['command'] }, { key_code: 'r', modifiers: ['command'] }],
     conditions: [{ bundle_identifiers: ['VSCode', cursorBundleId], type: 'frontmost_application_if' }],
   }),
