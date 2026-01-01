@@ -969,6 +969,49 @@
             "manipulators": [
               {
                 "type": "basic",
+                "description": "J + X -> Command palette in Wezterm",
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "wezterm"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "x"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "p",
+                    "modifiers": [
+                      "control",
+                      "left_shift"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
                 "description": "J + X -> Action list in reaper",
                 "conditions": [
                   {

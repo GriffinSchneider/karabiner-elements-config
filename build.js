@@ -307,6 +307,14 @@ const defaultProfileManipulators = [
     to: [{ key_code: 'p', modifiers: ['command', 'left_shift'] }],
   }),
   manipulator({
+    description: 'J + X -> Command palette in Wezterm',
+    conditions: [{ bundle_identifiers: ['wezterm'], type: 'frontmost_application_if' }],
+    from: {
+      simultaneous: [{ key_code: 'j' }, { key_code: 'x' }],
+    },
+    to: [{ key_code: 'p', modifiers: ['control', 'left_shift'] }],
+  }),
+  manipulator({
     description: 'J + X -> Action list in reaper',
     conditions: [{ bundle_identifiers: ['reaper'], type: 'frontmost_application_if' }],
     from: {
