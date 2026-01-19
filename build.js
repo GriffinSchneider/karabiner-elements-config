@@ -609,7 +609,7 @@ const defaultProfileManipulators = [
       // { key_code: 'o', modifiers: ['control'] },
       // { key_code: 'f', modifiers: ['command', 'option', 'control', 'shift'] },
     ],
-    conditions: [{ bundle_identifiers: ['VSCode'], type: 'frontmost_application_if' }],
+    conditions: [{ bundle_identifiers: ['VSCode', cursorBundleId], type: 'frontmost_application_if' }],
   }),
   manipulator({
     description: 'h + ; + j -> VSCode go to route handler from clipboard',
