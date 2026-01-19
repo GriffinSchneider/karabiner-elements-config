@@ -669,6 +669,7 @@ const defaultProfileManipulators = [
   ...pickApp({ k: 'u', app: 'Swinsian', bundleId: 'com.swinsian.Swinsian' }),
   ...pickApp({ k: 'w', app: 'Weather', bundleId: 'Weather' }),
   ...pickApp({ k: 'b', app: 'Blender', bundleId: 'com.blender.Blender' }),
+  ...pickApp({ k: 'n', app: 'Obsidian', bundleId: 'com.obsidian.Obsidian' }),
 ];
 
 
