@@ -424,6 +424,9 @@ const defaultProfileManipulators = [
       // Pressing Ctrl-L after clearing restores normal behavior.
       to: [{ key_code: 'k', modifiers: ['command'] }, { key_code: 'l', modifiers: ['control'] }],
     },
+    wezterm: {
+      to: [{ key_code: 'k', modifiers: ['command'] }],
+    },
     reaper: {
       to: [{ key_code: 'k', modifiers: ['command'] }],
     },
@@ -655,7 +658,7 @@ const defaultProfileManipulators = [
   ...pickApp({ k: 'c', app: 'Google Chrome', bundleId: 'Chrome' }),
   // ...pickApp({ k: 'e', app: '/System/Volumes/Data/usr/local/Cellar/emacs-plus@27/HEAD-29708cb/Emacs', bundleId: 'Emacs' }),
   ...pickApp({ k: 'e', app: 'Emacs', bundleId: 'Emacs' }),
-  ...pickApp({ k: 'i', app: 'ITerm', bundleId: 'iterm2' }),
+  ...pickApp({ k: 'i', app: 'WezTerm', bundleId: 'wezterm' }),
   ...pickApp({ k: 'v', app: 'Cursor', bundleId: cursorBundleId }),
   ...pickApp({ k: 'o', app: 'Postico 2', bundleId: 'Postico' }),
   ...pickApp({ k: 'p', app: 'Plex', bundleId: 'tv.plex.desktop' }),

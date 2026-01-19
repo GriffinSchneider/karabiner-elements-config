@@ -1938,6 +1938,7 @@
                       "com.todesktop.230313mzl4w4u92",
                       "firefox",
                       "iterm",
+                      "wezterm",
                       "reaper"
                     ],
                     "type": "frontmost_application_unless"
@@ -2120,6 +2121,48 @@
                     "key_code": "l",
                     "modifiers": [
                       "control"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "type": "basic",
+                "description": "j + l -> Super Shortcut (wezterm)",
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "j"
+                    },
+                    {
+                      "key_code": "l"
+                    }
+                  ],
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  },
+                  "simultaneous_options": {
+                    "key_down_order": "insensitive"
+                  }
+                },
+                "conditions": [
+                  {
+                    "bundle_identifiers": [
+                      "wezterm"
+                    ],
+                    "type": "frontmost_application_if"
+                  }
+                ],
+                "to": [
+                  {
+                    "key_code": "k",
+                    "modifiers": [
+                      "command"
                     ]
                   }
                 ]
@@ -3502,7 +3545,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + i -> ITerm",
+                "description": "Semicolon + i -> WezTerm",
                 "from": {
                   "simultaneous": [
                     {
@@ -3524,14 +3567,14 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "iterm2"
+                      "wezterm"
                     ],
                     "type": "frontmost_application_unless"
                   }
                 ],
                 "to": [
                   {
-                    "shell_command": "open -a \"ITerm.app\""
+                    "shell_command": "open -a \"WezTerm.app\""
                   }
                 ]
               }
@@ -3541,7 +3584,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + i in ITerm -> Cmd+`",
+                "description": "Semicolon + i in WezTerm -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -3563,7 +3606,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "iterm2"
+                      "wezterm"
                     ],
                     "type": "frontmost_application_if"
                   }
