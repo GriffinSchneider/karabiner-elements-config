@@ -676,8 +676,7 @@ const defaultProfileManipulators = [
 ];
 
 
-const configPath = path.join(require('os').homedir(), '.config', 'karabiner', 'karabiner.json');
-const config = require(configPath);
+const config = require('./karabiner.json');
 const profile = config.profiles.find(p => p.name === 'Default profile');
 
 profile.complex_modifications = {
@@ -694,4 +693,7 @@ profile.complex_modifications = {
 
 config.profiles.find(p => p.name === 'Minimal').complex_modifications.rules = minimalProfileManipulators.map(m => ({ manipulators: [m] }));
 
-fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
+const outputConfigPath = path.join(require('os').homedir(), '.config', 'karabiner', 'karabiner.json');
+const output = JSON.stringify(config, null, 2);
+fs.writeFileSync('./karabiner.json', output);
+fs.writeFileSync(outputConfigPath, output);
