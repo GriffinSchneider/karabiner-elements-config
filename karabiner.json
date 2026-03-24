@@ -4194,7 +4194,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + 1 -> 1Password 7",
+                "description": "Semicolon + 1 -> 1Password",
                 "from": {
                   "simultaneous": [
                     {
@@ -4216,14 +4216,14 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "onepassword7"
+                      "com.1password.1password"
                     ],
                     "type": "frontmost_application_unless"
                   }
                 ],
                 "to": [
                   {
-                    "shell_command": "open -a \"1Password 7.app\""
+                    "shell_command": "open -a \"1Password.app\""
                   }
                 ]
               }
@@ -4233,7 +4233,7 @@
             "manipulators": [
               {
                 "type": "basic",
-                "description": "Semicolon + 1 in 1Password 7 -> Cmd+`",
+                "description": "Semicolon + 1 in 1Password -> Cmd+`",
                 "from": {
                   "simultaneous": [
                     {
@@ -4255,7 +4255,7 @@
                 "conditions": [
                   {
                     "bundle_identifiers": [
-                      "onepassword7"
+                      "com.1password.1password"
                     ],
                     "type": "frontmost_application_if"
                   }
