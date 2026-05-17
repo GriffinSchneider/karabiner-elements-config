@@ -1043,8 +1043,7 @@
                   {
                     "key_code": "slash",
                     "modifiers": [
-                      "left_shift",
-                      "option"
+                      "left_shift"
                     ]
                   }
                 ]

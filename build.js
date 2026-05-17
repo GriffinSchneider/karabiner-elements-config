@@ -320,7 +320,7 @@ const defaultProfileManipulators = [
     from: {
       simultaneous: [{ key_code: 'j' }, { key_code: 'x' }],
     },
-      to: [{ key_code: 'slash', modifiers: ['left_shift', 'option'] }],
+      to: [{ key_code: 'slash', modifiers: ['left_shift'] }],
   }),
   manipulator({
     description: 'J + X -> M-x in Emacs',
